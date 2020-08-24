@@ -6,4 +6,4 @@ function someComponent() {
   return element;
 }
 
-document.appendChild(someComponent());
+document.body.appendChild(someComponent());
