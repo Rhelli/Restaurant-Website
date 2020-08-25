@@ -1,6 +1,72 @@
-@import url('./poppins/stylesheet.css');
+@import url('./assets/font/Poppins/stylesheet.css');
 
-.hello {
-  color: red;
-  font-family: 'Poppins';
+html {
+  box-sizing: border-box;
+}
+
+*, 
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  font: 400 16px/16px 'Poppins', sans-serif, monospace;
+  color: #505050;
+  padding: 0;
+  margin: 0;
+}
+
+.main-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  background-color: green;
+}
+
+// NAVBAR CONTAINER --------------------------//
+.navbar-container {
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: rgba(256, 256, 256, 0.8);
+  height: 65px;
+  width: 100%;
+  padding: 5px 15px;
+
+  .nav-logo-container {
+    height: 100%;
+    width: auto;
+    margin-right: auto;
+    .nav-logo {
+      height: 55px;
+      width: auto;
+      border-radius: 50%;
+      border: 3px solid #BFB58B;
+    }
+  }
+
+  .menu-tab,
+  .delivery-tab,
+  .about-tab {
+    display: block;
+    width: auto;
+    height: 100%;
+    padding: 0 30px;
+
+    h3 {
+      font-weight: 200;
+      font-size: 20px;
+    }
+  }
+}
+
+// HOMEPAGE ----------------------------------//
+.homepage-landing {
+  display: flex;
+  width: 95%;
+  height: 95%;
+  background-color: blue;
 }
