@@ -1,9 +1,11 @@
-import homepageLanding from './home';
+import generateNavbar from './nav';
+import homepageLandingContainer from './home';
 
 export default function mainPageContainer() {
-  const element = document.createElement('div');
-  element.id = 'content';
-  element.classList.add('main-container');
-  return element;
+  const mainContainer = document.createElement('div');
+  mainContainer.id = 'content';
+  mainContainer.classList.add('main-container');
+  mainContainer.appendChild(generateNavbar());
+  mainContainer.appendChild(homepageLandingContainer());
+  return mainContainer;
 }
-

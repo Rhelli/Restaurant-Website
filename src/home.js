@@ -1,6 +1,7 @@
-export default function homepageLanding(container) {
+export default function homepageLandingContainer() {
   const landingContainer = document.createElement('div');
   landingContainer.id = 'landingContainer';
   landingContainer.classList.add('landing-container');
-  container.appendChild(landingContainer);
+  return landingContainer;
 }
+
