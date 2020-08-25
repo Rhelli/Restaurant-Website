@@ -1,6 +1,36 @@
-@import url('./poppins/stylesheet.css');
+@import url('./assets/font/Poppins/stylesheet.css');
 
-.hello {
-  color: red;
-  font-family: 'Poppins';
+html {
+  box-sizing: border-box;
+}
+
+*, 
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  font: 400 16px/16px 'Poppins', sans-serif, monospace;
+  color: #505050;
+  padding: 0;
+  margin: 0;
+}
+
+.main-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  background-color: green;
+}
+
+// HOMEPAGE ----------------------------------//
+.homepage-landing {
+  display: flex;
+  width: 95%;
+  height: 95%;
+  background-color: blue;
 }
