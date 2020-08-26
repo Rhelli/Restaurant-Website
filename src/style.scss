@@ -97,6 +97,24 @@ body {
     }
   }
 
+  .landing-search {
+    display: flex;
+    width: 66%;
+    height: 50px;
+    background: red;
+    margin-bottom: 30px;
+
+    input {
+      height: 50px;
+      width: 80%;
+    }
+
+    button {
+      height: 50px;
+      width: 20%;
+    }
+  }
+
   .landing-buttons {
     display: flex;
     flex-flow: row nowrap;
