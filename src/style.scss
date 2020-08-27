@@ -3,8 +3,9 @@
 
 $primary-font: 'Poppins', sans-serif, monospace;
 $primary-condensed: 'Stint Ultra Condensed', sans-serif, monospace;
-$page-borders: #d54062;
-$page-texture: url('./assets/img/textures/checkered-pattern.png');
+$page-borders: #40a8c4;
+$nav-texture: url('./assets/img/textures/stardust.png');
+$main-texture: url('./assets/img/textures/wavecut.png');
 
 html {
   box-sizing: border-box;
@@ -21,7 +22,7 @@ body {
   height: 100vh;
   font: 400 16px/16px $primary-font;
   color: #505050;
-  background: $page-texture, $page-borders;
+  background: $main-texture, #3893AC;
   padding: 0;
   margin: 0;
 }
@@ -43,15 +44,20 @@ body {
   left: 0;
   right: 0;
   flex-flow: row nowrap;
+  align-items: center;
   height: 65px;
   width: 100%;
   padding: 0 15px;
-  background: $page-texture, $page-borders;
+  background: $nav-texture, $page-borders;
+  border-bottom: 1px solid #307E93;
+  -webkit-box-shadow: 0px 4px 13px 1px rgba(22,60,69,1);
+  -moz-box-shadow: 0px 4px 13px 1px rgba(22,60,69,1);
+  box-shadow: 0px 4px 13px 1px rgba(22,60,69,1);
 
   .nav-logo-container {
     display: flex;
     align-items: center;
-    height: 100%;
+    height: auto;
     width: auto;
     margin-right: auto;
 
@@ -66,6 +72,15 @@ body {
       font: 400 42px/42px $primary-condensed;
       padding-left: 20px;
       color: #dcdcdc;
+      margin: 0;
+      padding: 4px 14px;
+      margin-left: 20px;
+      border-radius: 4px;
+      border: 1px solid #3893AC;
+      background-color: #3893AC;
+      -webkit-box-shadow: inset 0px 0px 7px -1px rgba(39,109,125,1);
+      -moz-box-shadow: inset 0px 0px 7px -1px rgba(39,109,125,1);
+      box-shadow: inset 0px 0px 7px -1px rgba(39,109,125,1);
     }
   }
 
@@ -82,11 +97,29 @@ body {
       font: 300 36px/36px $primary-condensed;
       letter-spacing: 1px;
       color:#dcdcdc;
-      padding: 14px 18px;
-      border-radius: 10px 10px 3px 10px;
+      padding: 6px 14px;
+      border-radius: 4px;
       margin: 0;
+      background-color: #3893AC;
+      border: 1px solid #3893AC;
+      -webkit-box-shadow: inset 0px 0px 7px -1px rgba(39,109,125,1);
+      -moz-box-shadow: inset 0px 0px 7px -1px rgba(39,109,125,1);
+      box-shadow: inset 0px 0px 7px -1px rgba(39,109,125,1);
     }
   }
+}
+
+// PAGE CARD BOX SHADOWS
+.landing-container,
+.about-container {
+  border-right: 1px solid #28697B;
+  border-left: 1px solid #28697B;
+  border-bottom: 1px solid #28697B;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -webkit-box-shadow: 0px 2px 27px -1px rgba(22,60,69,1);
+  -moz-box-shadow: 0px 2px 27px -px rgba(22,60,69,1);
+  box-shadow: 0px 2px 27px -px rgba(22,60,69,1);
 }
 
 // HOMEPAGE ----------------------------------//
@@ -100,7 +133,6 @@ body {
   background: url('./assets/img/Meals/Sides/header.jpeg') no-repeat 100% / 100%;
   background-position: top;
   padding: 0 20px 20px 20px;
-  border-radius: 1px;
 
   .landing-title {
     display: block;
