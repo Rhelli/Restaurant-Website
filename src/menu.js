@@ -40,16 +40,16 @@ export default function generateMenu() {
     };
 
     const sandwichMenuBuilder = () => {
-      const sandwichNames = sandwichNames();
-      const sandwichDescriptions = sandwichDescriptions();
-      const sandwichPrices = ['6.75', '6.00', '5.50', '8.00', '6.75', '7.00', '5.50', '4.75'];
+      let sandwichNameArray = sandwichNames();
+      let sandwichDescriptionArray = sandwichDescriptions();
+      let sandwichPrices = ['6.75', '6.00', '5.50', '8.00', '6.75', '7.00', '5.50', '4.75'];
       for (let i = 0; i < 7; i++) {
         let sandwich = generator.htmlGenerator('div', `sandwich-${i}`, `sandwich${i}`);
         let sandwichText = generator.htmlGenerator('div', `sandwich-text-${i}`, `sandwichText${i}`);
         let sandwichImage = generator.htmlGenerator('div', `sandwich-image${i}`, `sandwichImage${i}`)
-        let sandwichTitle = generator.textGen('h4', sandwichNames[i]);
-        let sandwichDescription = generator.textGen('p', sandwichDescriptions[i]);
-        let sandwichPrice = sandwichPrices[i];
+        let sandwichTitle = generator.textGen('h4', sandwichNameArray[i]);
+        let sandwichDescription = generator.textGen('p', sandwichDescriptionArray[i]);
+        let sandwichPrice = generator.textGen('p', `${sandwichPrices[i]}`);
         sandwichText.appendChild(sandwichTitle);
         sandwichText.appendChild(sandwichDescription);
         sandwichText.appendChild(sandwichPrice);
