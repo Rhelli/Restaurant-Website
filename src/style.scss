@@ -1,72 +1,260 @@
 @import url('./assets/font/Poppins/stylesheet.css');
+@import url('./assets/font/StintUltraCondensed/stylesheet.css');
+
+$primary-font: 'Poppins', sans-serif, monospace;
+$primary-condensed: 'Stint Ultra Condensed', sans-serif, monospace;
+$page-borders: #40a8c4;
+$nav-texture: url('./assets/img/textures/stardust.png');
+$main-texture: url('./assets/img/textures/wavecut.png');
 
 html {
   box-sizing: border-box;
 }
 
-*, 
-*:before,
-*:after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
 body {
   width: 100%;
   height: 100vh;
-  font: 400 16px/16px 'Poppins', sans-serif, monospace;
+  font: 400 16px/16px $primary-font;
   color: #505050;
+  background: $main-texture, #3893AC;
   padding: 0;
   margin: 0;
 }
 
 .main-container {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column nowrap;
   width: 100%;
   height: 100vh;
-  justify-content: center;
-  background-color: green;
 }
 
 // NAVBAR CONTAINER --------------------------//
 .navbar-container {
   display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   flex-flow: row nowrap;
-  background-color: rgba(256, 256, 256, 0.8);
+  align-items: center;
   height: 65px;
   width: 100%;
-  padding: 5px 15px;
+  padding: 0 15px;
+  background: $nav-texture, $page-borders;
+  border-bottom: 1px solid #307E93;
+  -webkit-box-shadow: 0px 4px 13px 1px rgba(22,60,69,1);
+  -moz-box-shadow: 0px 4px 13px 1px rgba(22,60,69,1);
+  box-shadow: 0px 4px 13px 1px rgba(22,60,69,1);
 
   .nav-logo-container {
-    height: 100%;
+    display: flex;
+    align-items: center;
+    height: auto;
     width: auto;
     margin-right: auto;
+
     .nav-logo {
       height: 55px;
       width: auto;
       border-radius: 50%;
       border: 3px solid #BFB58B;
     }
+
+    h4 {
+      font: 400 42px/42px $primary-condensed;
+      padding-left: 20px;
+      color: #dcdcdc;
+      margin: 0;
+      padding: 4px 14px;
+      margin-left: 20px;
+      border-radius: 4px;
+      border: 1px solid #3893AC;
+      background-color: #3893AC;
+      -webkit-box-shadow: inset 0px 0px 7px -1px rgba(39,109,125,1);
+      -moz-box-shadow: inset 0px 0px 7px -1px rgba(39,109,125,1);
+      box-shadow: inset 0px 0px 7px -1px rgba(39,109,125,1);
+    }
   }
 
   .menu-tab,
   .delivery-tab,
   .about-tab {
-    display: block;
+    display: flex;
+    align-items: center;
     width: auto;
     height: 100%;
     padding: 0 30px;
 
     h3 {
-      font-weight: 200;
-      font-size: 20px;
+      font: 300 36px/36px $primary-condensed;
+      letter-spacing: 1px;
+      color:#dcdcdc;
+      padding: 6px 14px;
+      border-radius: 4px;
+      margin: 0;
+      background-color: #3893AC;
+      border: 1px solid #3893AC;
+      -webkit-box-shadow: inset 0px 0px 7px -1px rgba(39,109,125,1);
+      -moz-box-shadow: inset 0px 0px 7px -1px rgba(39,109,125,1);
+      box-shadow: inset 0px 0px 7px -1px rgba(39,109,125,1);
     }
   }
 }
 
+// PAGE CARD BOX SHADOWS
+.landing-container,
+.about-container {
+  border-right: 1px solid #28697B;
+  border-left: 1px solid #28697B;
+  border-bottom: 1px solid #28697B;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  -webkit-box-shadow: 0px 2px 27px -1px rgba(22,60,69,1);
+  -moz-box-shadow: 0px 2px 27px -px rgba(22,60,69,1);
+  box-shadow: 0px 2px 27px -px rgba(22,60,69,1);
+}
+
 // HOMEPAGE ----------------------------------//
-.homepage-landing {
+.landing-container {
   display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
   width: 95%;
-  height: 95%;
-  background-color: blue;
+  height: 90%;
+  background: url('./assets/img/Meals/Sides/header.jpeg') no-repeat 100% / 100%;
+  background-position: top;
+  padding: 0 20px 20px 20px;
+
+  .landing-title {
+    display: block;
+    width: 66%;
+    height: auto;
+    overflow: hidden;
+    white-space: normal;
+    word-wrap: normal;
+    position: relative;
+    bottom: 10px;
+
+    h1 {
+      width: 100%;
+      overflow: hidden;
+      font: 700 72px/72px $primary-font;
+      color: rgba(0, 121, 107, 0.8);
+      background: rgba(256, 256, 256, 0.4);
+      padding: 12px 14px;
+      letter-spacing: -4px;
+      border-radius: 4px;
+      text-align: center;
+    }
+  }
+
+  .landing-search {
+    display: flex;
+    width: 66%;
+    height: 50px;
+    background: red;
+    margin-bottom: 30px;
+
+    input {
+      height: 50px;
+      width: 80%;
+    }
+
+    button {
+      height: 50px;
+      width: 20%;
+    }
+  }
+
+  .landing-buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    height: auto;
+    width: 50%;
+    align-items: start;
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 80px;
+      background-color: red;
+      margin-right: 30px;
+    }
+  }
+}
+
+// ABOUT PAGE
+.about-container {
+  width: 95%;
+  height: 90%;
+  background: url('./assets/img/textures/paper.png'), #dcdcdc;
+  .about-contents-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    flex-flow: row nowrap;
+
+    .about-text-container,
+    .about-image-container {
+      height: 100%;
+      width: 50%;
+      margin-right: 0;
+    }
+
+    .about-text-container {
+      text-align: left;
+      padding: 100px 30px 30px 30px;
+
+      h3 {
+        font: 600 24px/24px $primary-font;
+        margin-bottom: 0;
+      }
+
+      h1 {
+        font: 400 68px/68px $primary-condensed;
+        margin: 0;
+      }
+
+      p {
+        font: 300 24px/24px $primary-font;
+        line-height: 1.3;
+      }
+
+      button {
+        width: 270px;
+        height: 50px;
+        border: none;
+        border-radius: 4px;
+
+        p {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 18px;
+          margin: 0;
+
+          .fa-arrow-circle-right {
+            font-size: 24px;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+
+    .about-image-container {
+      background: url('./assets/img/Meals/backgroundt.jpeg') no-repeat 50% / 100%;
+    }
+  }
 }
