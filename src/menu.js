@@ -10,7 +10,7 @@ export default function generateMenu() {
     // GENERATE SANDWICH NAMES. YUM.
     const sandwichNames = () => {
       const sandwichNames = [];
-      const unparsedSandwichNames = ["Chicken*'Slaw*&*Salad", "Croque*Monsieur*Deluxe", "Vegan*Power*Wrap", "Shooter's*Sandwich", "B.A.B.", "Fully*Loaded*Tacos", "Crispy*Chicken*Panini", "Croissant*Au*Meditarrean"];
+      const unparsedSandwichNames = ["Chicken*Salad*&'Slaw*", "Croque*Monsieur*Deluxe", "Vegan*Power*Wrap", "Shooter's*Sandwich", "B.A.B.", "Fully*Loaded*Tacos", "Crispy*Chicken*Panini", "Croissant*Au*Meditarrean"];
 
       for (let i = 0; i < unparsedSandwichNames.length; i++) {
         let parsedSandwichName = generator.spaceParse(unparsedSandwichNames[i], '*');
@@ -50,9 +50,17 @@ export default function generateMenu() {
         let sandwichTitle = generator.textGen('h4', sandwichNameArray[i]);
         let sandwichDescription = generator.textGen('p', sandwichDescriptionArray[i]);
         let sandwichPrice = generator.textGen('p', `${sandwichPrices[i]}`);
+        let button = generator.htmlGenerator('button', 'add-to-order-button', 'addToOrderButton');
         sandwichText.appendChild(sandwichTitle);
         sandwichText.appendChild(sandwichDescription);
         sandwichText.appendChild(sandwichPrice);
+        sandwichText.appendChild(button);
+
+        // HOW TO APPEND MUTLIPLE CHILDREN AT ONCE 
+        sandwichText.append()
+
+
+        sandwichText.classList.add('sandwich');
         sandwichContainer.append(sandwichText);
         sandwichContainer.append(sandwichImage);
       }

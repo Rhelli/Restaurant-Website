@@ -194,7 +194,7 @@ body {
   }
 }
 
-// ABOUT PAGE
+// ABOUT PAGE -----------------------------------//
 .about-container {
   width: 95%;
   height: 90%;
@@ -256,5 +256,21 @@ body {
     .about-image-container {
       background: url('./assets/img/Meals/backgroundt.jpeg') no-repeat 50% / 100%;
     }
+  }
+}
+
+// MENU PAGE -------------------------------------//
+.menu-container {
+  display: flex;
+  width: 95%;
+  height: 90%;
+  background: url('./assets/img/textures/paper.png'), #dcdcdc;
+  overflow: hidden;
+  overflow-y: auto;
+  padding: 30px;
+
+  .sandwich-container {
+    height: auto;
+    width: 50%;
   }
 }
