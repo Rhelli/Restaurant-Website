@@ -20,5 +20,5 @@ export default function mainPageContainer() {
     return mainContainer;
   };
 
-  return mainPageBuilder();
+  return mainPageBuilder(generateAbout());
 }
