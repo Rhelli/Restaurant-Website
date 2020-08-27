@@ -3,6 +3,8 @@
 
 $primary-font: 'Poppins', sans-serif, monospace;
 $primary-condensed: 'Stint Ultra Condensed', sans-serif, monospace;
+$page-borders: #d54062;
+$page-texture: url('./assets/img/textures/checkered-pattern.png');
 
 html {
   box-sizing: border-box;
@@ -19,51 +21,70 @@ body {
   height: 100vh;
   font: 400 16px/16px $primary-font;
   color: #505050;
+  background: $page-texture, $page-borders;
   padding: 0;
   margin: 0;
 }
 
 .main-container {
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-flow: column nowrap;
   width: 100%;
   height: 100vh;
-  justify-content: center;
-  background-color: green;
 }
 
 // NAVBAR CONTAINER --------------------------//
 .navbar-container {
   display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   flex-flow: row nowrap;
-  background-color: rgba(256, 256, 256, 0.8);
   height: 65px;
   width: 100%;
-  padding: 5px 15px;
+  padding: 0 15px;
+  background: $page-texture, $page-borders;
 
   .nav-logo-container {
+    display: flex;
+    align-items: center;
     height: 100%;
     width: auto;
     margin-right: auto;
+
     .nav-logo {
       height: 55px;
       width: auto;
       border-radius: 50%;
       border: 3px solid #BFB58B;
     }
+
+    h4 {
+      font: 400 42px/42px $primary-condensed;
+      padding-left: 20px;
+      color: #dcdcdc;
+    }
   }
 
   .menu-tab,
   .delivery-tab,
   .about-tab {
-    display: block;
+    display: flex;
+    align-items: center;
     width: auto;
     height: 100%;
     padding: 0 30px;
 
     h3 {
-      font-weight: 200;
-      font-size: 20px;
+      font: 300 36px/36px $primary-condensed;
+      letter-spacing: 1px;
+      color:#dcdcdc;
+      padding: 14px 18px;
+      border-radius: 10px 10px 3px 10px;
+      margin: 0;
     }
   }
 }
@@ -72,10 +93,14 @@ body {
 .landing-container {
   display: flex;
   flex-flow: column nowrap;
-  width: 100%;
-  height: 100%;
-  background: url('./assets/img/Meals/Sandwiches/header.jpeg') no-repeat 100% / 100%;
-  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  height: 90%;
+  background: url('./assets/img/Meals/Sides/header.jpeg') no-repeat 100% / 100%;
+  background-position: top;
+  padding: 0 20px 20px 20px;
+  border-radius: 1px;
 
   .landing-title {
     display: block;
@@ -84,6 +109,8 @@ body {
     overflow: hidden;
     white-space: normal;
     word-wrap: normal;
+    position: relative;
+    bottom: 10px;
 
     h1 {
       width: 100%;
@@ -94,6 +121,7 @@ body {
       padding: 12px 14px;
       letter-spacing: -4px;
       border-radius: 4px;
+      text-align: center;
     }
   }
 
@@ -118,9 +146,9 @@ body {
   .landing-buttons {
     display: flex;
     flex-flow: row nowrap;
+    justify-content: center;
     height: auto;
     width: 50%;
-    justify-content: start;
     align-items: start;
 
     div {

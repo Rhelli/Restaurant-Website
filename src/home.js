@@ -1,9 +1,9 @@
 import * as generator from './generator';
 
-export default function homepageLandingContainer() {
+export default function generateHomepage() {
   const landingContainer = generator.htmlGenerator('div', 'landing-container', 'landingContainer');
 
-  // CREATE THE LANDING TTITLE
+  // CREATE THE LANDING TITLE
   const landingTitleGen = () => {
     const landingTitleContainer = generator.htmlGenerator('div', 'landing-title');
     const title = generator.spaceParse('The&nbsp;Earl&nbsp;Of&nbsp;Sandwich.\nThe&nbsp;Home&nbsp;Of&nbsp;Lunchtime.', '&nbsp;');
