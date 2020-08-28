@@ -111,7 +111,8 @@ body {
 
 // PAGE CARD BOX SHADOWS
 .landing-container,
-.about-container {
+.about-container,
+.menu-container {
   border-right: 1px solid #28697B;
   border-left: 1px solid #28697B;
   border-bottom: 1px solid #28697B;
@@ -280,14 +281,16 @@ body {
     p {
       background-color: #28697B;
       color: #dcdcdc;
-      padding: 8px 12px 8px 6px;
-      font-size: 18px;
+      padding: 12px 22px 12px 6px;
+      font-size: 36px;
       border-radius: 8px 100px 100px 8px;
+      font-family: $primary-condensed;
+      margin: 20px 0;
     }
   }
 
   h1 {
-    font: 400 84px/84px $primary-condensed;
+    font: 600 96px/96px $primary-condensed;
     width: 70%;
     text-align: center;
     border-top: 5px double #28697B;
@@ -326,10 +329,9 @@ body {
         width: 70%;
 
         h4 {
-          font: 400 64px/64px $primary-condensed;
+          font: 400 58px/58px $primary-condensed;
           margin: 0;
           margin-bottom: 15px;
-
         }
 
         p {
@@ -369,6 +371,11 @@ body {
         height: 100%;
         width: 30%;
         padding: 20px;
+        border-radius: 4px;
+        border-top: 3px solid #ABEBC6;
+        border-left: 3px solid #ABEBC6;
+        border-bottom: 3px solid #76D7C4;
+        border-right: 3px solid #76D7C4;
       }
 
       .sandwich-image0,
@@ -379,8 +386,9 @@ body {
       .sandwich-image5,
       .sandwich-image6 {
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: auto;
         background-position: center;
+        background-size: 100% auto;
       }
 
       .sandwich-image0 {
@@ -393,16 +401,18 @@ body {
 
       .sandwich-image2 {
         background-image: url('./assets/img/Meals/Sandwiches/3.jpeg');
+        background-position: bottom;
       }
 
       .sandwich-text-3 {
         width: 50%;
+        height: auto;
       }
 
       .sandwich-image3 {
         width: 50%;
         background-image: url('./assets/img/Meals/Sandwiches/4.jpeg');
-        background-size: 100% 100%;
+        background-size: 100% auto;
       }
 
       .sandwich-image4 {
@@ -415,7 +425,14 @@ body {
 
       .sandwich-image6 {
         background-image: url('./assets/img/Meals/Sandwiches/7.jpeg');
+        background-position: bottom;
       }
+    }
+
+    .sandwich-row:nth-child(5) {
+      border: 10px double #ffc93c;
+      padding-left: 10px;
+      padding-right: 10px;
     }
   }
 }
