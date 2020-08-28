@@ -378,28 +378,28 @@ body {
         border-right: 3px solid #76D7C4;
       }
 
-      .sandwich-image0,
-      .sandwich-image1,
-      .sandwich-image2,
-      .sandwich-image3,
-      .sandwich-image4,
-      .sandwich-image5,
-      .sandwich-image6 {
+      .sandwich-image-0,
+      .sandwich-image-1,
+      .sandwich-image-2,
+      .sandwich-image-3,
+      .sandwich-image-4,
+      .sandwich-image-5,
+      .sandwich-image-6 {
         background-repeat: no-repeat;
         background-size: auto;
         background-position: center;
         background-size: 100% auto;
       }
 
-      .sandwich-image0 {
+      .sandwich-image-0 {
         background-image: url('./assets/img/Meals/Sandwiches/1.jpeg');
       }
 
-      .sandwich-image1 {
+      .sandwich-image-1 {
         background-image: url('./assets/img/Meals/Sandwiches/2.jpeg');
       }
 
-      .sandwich-image2 {
+      .sandwich-image-2 {
         background-image: url('./assets/img/Meals/Sandwiches/3.jpeg');
         background-position: bottom;
       }
@@ -409,23 +409,28 @@ body {
         height: auto;
       }
 
-      .sandwich-image3 {
+      .sandwich-image-3 {
         width: 50%;
         background-image: url('./assets/img/Meals/Sandwiches/4.jpeg');
         background-size: 100% auto;
       }
 
-      .sandwich-image4 {
+      .sandwich-image-4 {
         background-image: url('./assets/img/Meals/Sandwiches/5.jpeg');
       }
 
-      .sandwich-image5 {
+      .sandwich-image-5 {
         background-image: url('./assets/img/Meals/Sandwiches/6.jpeg');
       }
 
-      .sandwich-image6 {
+      .sandwich-image-6 {
         background-image: url('./assets/img/Meals/Sandwiches/7.jpeg');
         background-position: bottom;
+      }
+
+      .sandwich-image-7 {
+        background-image: url('./assets/img/Meals/Sandwiches/8.jpeg');
+        background-size: 100% auto;
       }
     }
 
