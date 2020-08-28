@@ -2,15 +2,32 @@ import * as generator from './generator';
 
 export default function generateMenu() {
   const menuContainer = generator.htmlGenerator('div', 'menu-container', 'menuContainer');
+  const menuTitle = generator.textGen('h1', 'Menu');
 
+  // CREATE THE MENU SHORTCUTS/LINKS
+  const menuShortcuts = () => {
+    const menuShortcutsContainer = generator.htmlGenerator('div', 'menu-shortcuts', 'menuShortcuts');
+    const menuShortcutsArray = ['•&nbsp;Sandwiches', '•&nbsp;Sides', '•&nbsp;Desserts', '•&nbsp;Drinks'];
+
+    for (let i = 0; i < menuShortcutsArray.length; i++) {
+      let element = generator.htmlGenerator('div', `menu-shortcut-${i}`, `menuShortcut${i}`);
+      let text = generator.textGen('p', `${menuShortcutsArray[i]}`);
+      element.appendChild(text);
+      menuShortcutsContainer.appendChild(element);
+    }
+    return menuShortcutsContainer;
+  };
+
+  // CREATE THE SANDWICH MENU
   const sandwichMenu = () => {
     // CREATE THE SANDWICH CONTAINER
     const sandwichContainer = generator.htmlGenerator('div', 'sandwich-container', 'sandwichContainer');
-
+    const sandwichContainerTitle = generator.textGen('h2', '•&nbsp;Sandwiches');
+    sandwichContainer.appendChild(sandwichContainerTitle);
     // GENERATE SANDWICH NAMES. YUM.
     const sandwichNames = () => {
       const sandwichNames = [];
-      const unparsedSandwichNames = ["Chicken*Salad*&'Slaw*", "Croque*Monsieur*Deluxe", "Vegan*Power*Wrap", "Shooter's*Sandwich", "B.A.B.", "Fully*Loaded*Tacos", "Crispy*Chicken*Panini", "Croissant*Au*Meditarrean"];
+      const unparsedSandwichNames = ["Chicken*Salad*&*'Slaw*", "Croque*Monsieur*Deluxe", "Vegan*Power*Wrap", "Shooter's*Sandwich", "B.A.B.", "Fully*Loaded*Tacos", "Crispy*Chicken*Panini", "Croissant*Au*Meditarrean"];
 
       for (let i = 0; i < unparsedSandwichNames.length; i++) {
         let parsedSandwichName = generator.spaceParse(unparsedSandwichNames[i], '*');
@@ -44,6 +61,7 @@ export default function generateMenu() {
       let sandwichDescriptionArray = sandwichDescriptions();
       let sandwichPrices = ['6.75', '6.00', '5.50', '8.00', '6.75', '7.00', '5.50', '4.75'];
       for (let i = 0; i < 7; i++) {
+        let sandwichRow = generator.htmlGenerator('div', 'sandwich-row', 'sandwichRow');
         let sandwich = generator.htmlGenerator('div', `sandwich-${i}`, `sandwich${i}`);
         let sandwichText = generator.htmlGenerator('div', `sandwich-text-${i}`, `sandwichText${i}`);
         let sandwichImage = generator.htmlGenerator('div', `sandwich-image${i}`, `sandwichImage${i}`)
@@ -51,18 +69,15 @@ export default function generateMenu() {
         let sandwichDescription = generator.textGen('p', sandwichDescriptionArray[i]);
         let sandwichPrice = generator.textGen('p', `${sandwichPrices[i]}`);
         let button = generator.htmlGenerator('button', 'add-to-order-button', 'addToOrderButton');
-        sandwichText.appendChild(sandwichTitle);
-        sandwichText.appendChild(sandwichDescription);
-        sandwichText.appendChild(sandwichPrice);
-        sandwichText.appendChild(button);
-
-        // HOW TO APPEND MUTLIPLE CHILDREN AT ONCE 
-        sandwichText.append()
-
+        let addToOrder = generator.spaceParse('Add*to*order<i*class="fas*fa-shopping-basket"></i*class=>', '*');
+        let buttonText = generator.textGen('p', addToOrder);
+        button.appendChild(buttonText);
+        sandwichText.append(sandwichTitle, sandwichDescription, sandwichPrice, button);
 
         sandwichText.classList.add('sandwich');
-        sandwichContainer.append(sandwichText);
-        sandwichContainer.append(sandwichImage);
+        sandwichImage.classList.add('sandwich-image');
+        sandwichRow.append(sandwichText, sandwichImage);
+        sandwichContainer.appendChild(sandwichRow);
       }
       return sandwichContainer;
     };
@@ -70,7 +85,7 @@ export default function generateMenu() {
   };
 
   const menuBuilder = () => {
-    menuContainer.append(sandwichMenu());
+    menuContainer.append(menuShortcuts(), menuTitle, sandwichMenu());
     return menuContainer;
   };
 

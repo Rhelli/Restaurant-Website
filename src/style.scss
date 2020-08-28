@@ -262,6 +262,8 @@ body {
 // MENU PAGE -------------------------------------//
 .menu-container {
   display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
   width: 95%;
   height: 90%;
   background: url('./assets/img/textures/paper.png'), #dcdcdc;
@@ -269,8 +271,151 @@ body {
   overflow-y: auto;
   padding: 30px;
 
+  .menu-shortcuts {
+    display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: space-evenly;
+
+    p {
+      background-color: #28697B;
+      color: #dcdcdc;
+      padding: 8px 12px 8px 6px;
+      font-size: 18px;
+      border-radius: 8px 100px 100px 8px;
+    }
+  }
+
+  h1 {
+    font: 400 84px/84px $primary-condensed;
+    width: 70%;
+    text-align: center;
+    border-top: 5px double #28697B;
+    border-bottom: 5px double #28697B;
+    margin: 20px 0 10px 0;
+  }
+
+  h2 {
+    width: 280px;
+    font: 400 64px/64px $primary-condensed;
+    margin-left: 10px;
+    padding: 12px 10px;
+    color: #dcdcdc;
+    background-color: rgba(0, 121, 107, 0.8);
+    border-radius: 6px 100px 100px 6px;
+  }
+
   .sandwich-container {
     height: auto;
-    width: 50%;
+    width: 100%;
+
+    .sandwich-row {
+      display: flex;
+      height: 500px;
+      width: 100%;
+      flex-flow: row nowrap;
+      margin-bottom: 30px;
+      border-bottom: 5px double #40a8c4;
+      padding: 20px 0;
+
+      .sandwich {
+        display: flex;
+        flex-flow: column nowrap;
+        padding: 20px;
+        height: 400px;
+        width: 70%;
+
+        h4 {
+          font: 400 64px/64px $primary-condensed;
+          margin: 0;
+          margin-bottom: 15px;
+
+        }
+
+        p {
+          font: 200 22px/22px $primary-font;
+          line-height: 1.5;
+          letter-spacing: 0.9;
+          margin: 0;
+          margin-bottom: 15px;
+        }
+
+        p:nth-child(3) {
+          font-weight: 700;
+        }
+
+        button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 250px;
+          height: 70px;
+          border: none;
+          border-radius: 4px;
+          margin-top: 10px;
+
+          p {
+            font-size: 18px;
+            margin: 0;
+
+            svg {
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+
+      .sandwich-image {
+        height: 100%;
+        width: 30%;
+        padding: 20px;
+      }
+
+      .sandwich-image0,
+      .sandwich-image1,
+      .sandwich-image2,
+      .sandwich-image3,
+      .sandwich-image4,
+      .sandwich-image5,
+      .sandwich-image6 {
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+
+      .sandwich-image0 {
+        background-image: url('./assets/img/Meals/Sandwiches/1.jpeg');
+      }
+
+      .sandwich-image1 {
+        background-image: url('./assets/img/Meals/Sandwiches/2.jpeg');
+      }
+
+      .sandwich-image2 {
+        background-image: url('./assets/img/Meals/Sandwiches/3.jpeg');
+      }
+
+      .sandwich-text-3 {
+        width: 50%;
+      }
+
+      .sandwich-image3 {
+        width: 50%;
+        background-image: url('./assets/img/Meals/Sandwiches/4.jpeg');
+        background-size: 100% 100%;
+      }
+
+      .sandwich-image4 {
+        background-image: url('./assets/img/Meals/Sandwiches/5.jpeg');
+      }
+
+      .sandwich-image5 {
+        background-image: url('./assets/img/Meals/Sandwiches/6.jpeg');
+      }
+
+      .sandwich-image6 {
+        background-image: url('./assets/img/Meals/Sandwiches/7.jpeg');
+      }
+    }
   }
 }
