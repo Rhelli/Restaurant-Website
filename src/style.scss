@@ -518,4 +518,24 @@ body {
     }
   }
 
+  .drinks-container {
+    height: auto;
+    width: 100%;
+    
+    .drinks-container {
+      display: flex;
+      flex-flow: row wrap;
+      width: 100%;
+      height: 100%;
+      background: red;
+
+      .menu-block {
+        display: inline-flex;
+        flex-flow: column nowrap;
+        height: 300px;
+        width: 50%;
+      }
+    }
+  }
+
 }

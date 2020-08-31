@@ -73,10 +73,12 @@ export default function generateMenu() {
 
   const drinksMenu = () => {
     const drinksContainer = generator.htmlGenerator('div', 'drinks-container', 'drinksContainer');
+    const drinksContainerSubtitle = generator.textGen('h2', '•&nbsp;Drinks');
+    const drinksSubContainer = generator.htmlGenerator('div', 'drinks-subcontainer', 'drinksSubContainer');
 
     const softDrinksNames = ['Coca-Cola', 'San*Peligrino', 'Pepsi', 'Fanta', 'Sprite', 'Orangina', 'Lipton*Iced*Tea', 'Dr*Pepper'];
     const softDrinksPrices = ['1', '1.20', '1', '1', '1', '1', '1.20', '1.00', '1'];
-    const teasDrinksNames = ['Breakfast,*Earl*Grey,*Gunpowder*Green*Tea,*Matcha*Green*Tea,*Oolong*Tea,*Yogi*Tea'];
+    const teasDrinksNames = ['Breakfast', '*Earl*Grey', 'Gunpowder*Green*Tea', 'Matcha*Green*Tea', 'Oolong*Tea', '*Yogi*Tea'];
     const teasDrinksPrices = ['1', '1', '1.20', '1.60', '1.30', '1.40'];
     const coffeesDrinksNames = ['Americano', 'Cappuccino', 'Flat*White', 'Latte', 'Cortado', 'Machiatto', 'Ristretto', 'Frappé', 'Cold*Brew'];
     const coffeesDrinksPrices = ['1', '1.40', '1.20', '1.50', '1.10', '1.20', '1', '1.80', '1.20'];
@@ -91,9 +93,10 @@ export default function generateMenu() {
     const beersDrinksMenu = generator.textMenuGen('beers', beersDrinksNames, beersDrinksPrices);
     const wineDrinksMenu = generator.textMenuGen('wines', wineDrinksNames, wineDrinksPrices);
 
-    drinksContainer.append(softDrinksMenu, teasDrinksMenu, coffeesDrinksMenu, beersDrinksMenu, wineDrinksMenu);
+    drinksSubContainer.append(softDrinksMenu, teasDrinksMenu, coffeesDrinksMenu, beersDrinksMenu, wineDrinksMenu);
+    drinksContainer.append(drinksContainerSubtitle, drinksSubContainer);
     return drinksContainer;
-  }
+  };
 
 
   const menuBuilder = () => {

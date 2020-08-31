@@ -100,13 +100,14 @@ const textMenuGen = (drinkType, drinkNames, drinkPrices) => {
   const drinksContainer = htmlGenerator('div', `${drinkType}-container`, `${drinkType}Container`);
   const capitalisedDrinkType = drinkType.charAt(0).toUpperCase() + drinkType.slice(1);
   const drinksSubtitle = textGen('h5', spaceParse(`${capitalisedDrinkType}*Drinks`, '*'));
-  const drinksSubcontainer = htmlGenerator('div', `${drinkType}-drinks-menu-container`, `${drinkType}DrinksMenuContainer`);
+  const menuBlock = htmlGenerator('div', `${drinkType}-drinks-menu-block`, `${drinkType}DrinksMenuBlock`);
+  drinksContainer.appendChild(drinksSubtitle);
   for (let i = 0; i < drinkNames.length; i++) {
     let element = textGen('p', spaceParse(`${drinkNames[i]}*-*<em>£${drinkPrices[i]}</em>`, '*'));
-    drinksSubcontainer.appendChild(element);
+    drinksContainer.append(element);
   }
-  drinksContainer.append(drinksSubtitle, drinksSubcontainer);
+  drinksContainer.classList.add('menu-block');
   return drinksContainer;
-}
+};
 
 export { textGen, spaceParse, htmlGenerator, imgGen, sequentialAppend, subMenuGen, textMenuGen };
