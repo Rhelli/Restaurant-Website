@@ -308,11 +308,16 @@ body {
     border-radius: 6px 100px 100px 6px;
   }
 
-  .sandwich-container {
+  //SANDWICH MENU -------------//
+  .sandwich-container,
+  .sides-container,
+  .desserts-container {
     height: auto;
     width: 100%;
 
-    .sandwich-row {
+    .sandwich-row,
+    .sides-row,
+    .desserts-row {
       display: flex;
       height: 500px;
       width: 100%;
@@ -321,7 +326,9 @@ body {
       border-bottom: 5px double #40a8c4;
       padding: 20px 0;
 
-      .sandwich {
+      .sandwich,
+      .sides,
+      .desserts {
         display: flex;
         flex-flow: column nowrap;
         padding: 20px;
@@ -367,7 +374,9 @@ body {
         }
       }
 
-      .sandwich-image {
+      .sandwich-image,
+      .sides-image,
+      .desserts-image {
         height: 100%;
         width: 30%;
         padding: 20px;
@@ -384,13 +393,24 @@ body {
       .sandwich-image-3,
       .sandwich-image-4,
       .sandwich-image-5,
-      .sandwich-image-6 {
+      .sandwich-image-6,
+      .sides-image-0,
+      .sides-image-1,
+      .sides-image-2,
+      .sides-image-3,
+      .sides-image-4,
+      .sides-image-5,
+      .desserts-image-0,
+      .desserts-image-1,
+      .desserts-image-2,
+      .desserts-image-3 {
         background-repeat: no-repeat;
         background-size: auto;
         background-position: center;
         background-size: 100% auto;
       }
 
+      // SANDWICH IMAGES -------------//
       .sandwich-image-0 {
         background-image: url('./assets/img/Meals/Sandwiches/1.jpeg');
       }
@@ -412,7 +432,6 @@ body {
       .sandwich-image-3 {
         width: 50%;
         background-image: url('./assets/img/Meals/Sandwiches/4.jpeg');
-        background-size: 100% auto;
       }
 
       .sandwich-image-4 {
@@ -430,7 +449,59 @@ body {
 
       .sandwich-image-7 {
         background-image: url('./assets/img/Meals/Sandwiches/8.jpeg');
-        background-size: 100% auto;
+      }
+
+      // SIDES-IMAGES --------------//
+      .sides-image-0 {
+        background-image: url('./assets/img/Meals/Sides/1.jpeg');
+      }
+
+      .sides-text-1 {
+        width: 50%;
+      }
+
+      .sides-image-1 {
+        width: 50%;
+        background-image: url('./assets/img/Meals/Sides/2.jpeg');
+      }
+
+      .sides-text-2 {
+        width: 50%;
+      }
+
+      .sides-image-2 {
+        width: 50%;
+        background-image: url('./assets/img/Meals/Sides/3.jpeg');
+      }
+
+      .sides-image-3 {
+        background-image: url('./assets/img/Meals/Sides/4.jpeg');
+      }
+
+      .sides-image-4 {
+        background-image: url('./assets/img/Meals/Sides/5.jpeg');
+      }
+
+      .sides-image-5 {
+        background-image: url('./assets/img/Meals/Sides/6.jpeg');
+      }
+
+      // DESSERTS IMAGES ------------------------//
+      .desserts-image-0 {
+        background-image: url('./assets/img/Meals/Deserts/1.jpeg');
+        background-size: auto 100%;
+      }
+
+      .desserts-image-1 {
+        background-image: url('./assets/img/Meals/Deserts/2.jpeg');
+      }
+
+      .desserts-image-2 {
+        background-image: url('./assets/img/Meals/Deserts/3.jpeg');
+      }
+
+      .desserts-image-3 {
+        background-image: url('./assets/img/Meals/Deserts/4.jpeg');
       }
     }
 
@@ -439,5 +510,12 @@ body {
       padding-left: 10px;
       padding-right: 10px;
     }
+
+    .sides-row:nth-child(3) {
+      border: 10px double #ffc93c;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
   }
+
 }

@@ -96,4 +96,17 @@ const subMenuGen = (foodType, containerTitleText, unparsedFoodNames, unparsedFoo
   return menuBuilder();
 };
 
-export { textGen, spaceParse, htmlGenerator, imgGen, sequentialAppend, subMenuGen };
+const textMenuGen = (drinkType, drinkNames, drinkPrices) => {
+  const drinksContainer = htmlGenerator('div', `${drinkType}-container`, `${drinkType}Container`);
+  const capitalisedDrinkType = drinkType.charAt(0).toUpperCase() + drinkType.slice(1);
+  const drinksSubtitle = textGen('h5', spaceParse(`${capitalisedDrinkType}*Drinks`, '*'));
+  const drinksSubcontainer = htmlGenerator('div', `${drinkType}-drinks-menu-container`, `${drinkType}DrinksMenuContainer`);
+  for (let i = 0; i < drinkNames.length; i++) {
+    let element = textGen('p', spaceParse(`${drinkNames[i]}*-*<em>£${drinkPrices[i]}</em>`, '*'));
+    drinksSubcontainer.appendChild(element);
+  }
+  drinksContainer.append(drinksSubtitle, drinksSubcontainer);
+  return drinksContainer;
+}
+
+export { textGen, spaceParse, htmlGenerator, imgGen, sequentialAppend, subMenuGen, textMenuGen };
