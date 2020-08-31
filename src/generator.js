@@ -40,7 +40,8 @@ const subMenuGen = (foodType, containerTitleText, unparsedFoodNames, unparsedFoo
   // CREATE CONTAINER, CAPITALISE FOOD TYPE AND APPEND IT TO THE CONTAINER
   const mainContainer = htmlGenerator('div', `${foodType}-container`, `${foodType}Container`);
   const capitalisedTitle = containerTitleText.charAt(0).toUpperCase() + containerTitleText.slice(1);
-  const containerTitle = textGen('h2', `•&nbsp;${capitalisedTitle}`);
+  const containerTitle = textGen('a', `•&nbsp;${capitalisedTitle}`);
+  containerTitle.href = `#${capitalisedTitle}`;
   mainContainer.appendChild(containerTitle);
 
   // PARSE FOOD NAMES ARRAY

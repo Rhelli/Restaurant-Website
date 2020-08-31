@@ -298,20 +298,38 @@ body {
     margin: 20px 0 10px 0;
   }
 
-  h2 {
+  a {
     width: 280px;
     font: 400 64px/64px $primary-condensed;
-    padding: 12px 10px;
+    padding: 12px 20px;
     color: #dcdcdc;
     background-color: rgba(0, 121, 107, 0.8);
     border-radius: 6px 100px 100px 6px;
-    margin: 15px 10px 15px 10px;
+    margin: 20px 10px 20px 10px;
+    text-decoration: none;
+    pointer-events: none;
+
+    &:hover {
+      text-decoration: none;
+      color: #dcdcdc;
+    }
+  }
+
+  button {
+    transition-duration: 0.15s;
+    &:hover {
+      background-color: #307E93;
+      transition-duration: 0.3s;
+      color: #dcdcdc;
+      transform: scale(1.02);
+    }
   }
 
   //SANDWICH MENU -------------//
   .sandwich-container,
   .sides-container,
   .desserts-container {
+    padding-top: 40px;
     height: auto;
     width: 100%;
 
@@ -562,10 +580,19 @@ body {
               font-size: 14px;
               margin: 0;
             }
+
+            &:hover {
+              p {
+                color: #dcdcdc;
+              }
+            }
           }
         }
       }
+
+      .coffee-container {
+        height: 450px;
+      }
     }
   }
-
 }

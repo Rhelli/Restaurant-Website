@@ -73,7 +73,8 @@ export default function generateMenu() {
 
   const drinksMenu = () => {
     const drinksContainer = generator.htmlGenerator('div', 'drinks-container', 'drinksContainer');
-    const drinksContainerSubtitle = generator.textGen('h2', '•&nbsp;Drinks');
+    const drinksContainerSubtitle = generator.textGen('a', '•&nbsp;Drinks');
+    drinksContainerSubtitle.href = '#Drinks';
     const drinksSubContainer = generator.htmlGenerator('div', 'drinks-subcontainer', 'drinksSubContainer');
 
     const softDrinksNames = ['Coca-Cola', 'San*Peligrino', 'Pepsi', 'Fanta', 'Sprite', 'Orangina', 'Lipton*Iced*Tea', 'Dr*Pepper'];
@@ -97,6 +98,17 @@ export default function generateMenu() {
     drinksContainer.append(drinksContainerSubtitle, drinksSubContainer);
     return drinksContainer;
   };
+
+  const internalLinksScroll = () => {
+    const sandwichTitle = document.getElementById('sandwichContainer');
+    const sidesTitle = document.getElementById('sidesContainer');
+    const dessertsTitle = document.getElementById('dessertsContainer');
+    const drinksTitle = document.getElementById('drinksContainer');
+
+    const scrollPoints = document.getElementsByClassName('sandwich-container sides-container desserts-container drinks-container');
+    // Added event listeners to each element
+    // https://perishablepress.com/vanilla-javascript-scroll-anchor/
+  }
 
 
   const menuBuilder = () => {
