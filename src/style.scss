@@ -301,11 +301,11 @@ body {
   h2 {
     width: 280px;
     font: 400 64px/64px $primary-condensed;
-    margin-left: 10px;
     padding: 12px 10px;
     color: #dcdcdc;
     background-color: rgba(0, 121, 107, 0.8);
     border-radius: 6px 100px 100px 6px;
+    margin: 15px 10px 15px 10px;
   }
 
   //SANDWICH MENU -------------//
@@ -522,18 +522,48 @@ body {
     height: auto;
     width: 100%;
     
-    .drinks-container {
+    .drinks-subcontainer {
       display: flex;
       flex-flow: row wrap;
       width: 100%;
       height: 100%;
-      background: red;
+      padding: 20px;
 
       .menu-block {
         display: inline-flex;
         flex-flow: column nowrap;
-        height: 300px;
+        height: 420px;
         width: 50%;
+        margin-bottom: 15px;
+
+        h5 {
+          font: 400 36px/36px $primary-condensed;
+          margin: 0;
+          margin-bottom: 10px;
+        }
+
+        .menu-item {
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+
+          button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 30px;
+            border: none;
+            border-radius: 4px;
+            margin-left: auto;
+            margin-right: 40px;
+
+            p {
+              color: #505050;
+              font-size: 14px;
+              margin: 0;
+            }
+          }
+        }
       }
     }
   }

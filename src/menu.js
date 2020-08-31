@@ -77,21 +77,21 @@ export default function generateMenu() {
     const drinksSubContainer = generator.htmlGenerator('div', 'drinks-subcontainer', 'drinksSubContainer');
 
     const softDrinksNames = ['Coca-Cola', 'San*Peligrino', 'Pepsi', 'Fanta', 'Sprite', 'Orangina', 'Lipton*Iced*Tea', 'Dr*Pepper'];
-    const softDrinksPrices = ['1', '1.20', '1', '1', '1', '1', '1.20', '1.00', '1'];
+    const softDrinksPrices = ['1.00', '1.20', '1.00', '1.00', '1.00', '1.00', '1.20', '1.00', '1.00'];
     const teasDrinksNames = ['Breakfast', '*Earl*Grey', 'Gunpowder*Green*Tea', 'Matcha*Green*Tea', 'Oolong*Tea', '*Yogi*Tea'];
-    const teasDrinksPrices = ['1', '1', '1.20', '1.60', '1.30', '1.40'];
+    const teasDrinksPrices = ['1.00', '1.00', '1.20', '1.60', '1.30', '1.40'];
     const coffeesDrinksNames = ['Americano', 'Cappuccino', 'Flat*White', 'Latte', 'Cortado', 'Machiatto', 'Ristretto', 'Frappé', 'Cold*Brew'];
-    const coffeesDrinksPrices = ['1', '1.40', '1.20', '1.50', '1.10', '1.20', '1', '1.80', '1.20'];
+    const coffeesDrinksPrices = ['1.00', '1.40', '1.20', '1.50', '1.10', '1.20', '1.00', '1.80', '1.20'];
     const beersDrinksNames = ['Peroni', 'Carling', 'Frontier', 'Amstel', 'Sierra*Nevada', 'Punk*IPA'];
     const beersDrinksPrices = ['5.25', '4.50', '5.25', '4.60', '5.65', '5.50'];
     const wineDrinksNames = ['House*White*Wine*150mL', 'House*Red*Wine*150mL'];
     const wineDrinksPrices = ['4.75', '4.75'];
 
     const softDrinksMenu = generator.textMenuGen('soft', softDrinksNames, softDrinksPrices);
-    const teasDrinksMenu = generator.textMenuGen('teas', teasDrinksNames, teasDrinksPrices);
-    const coffeesDrinksMenu = generator.textMenuGen('coffees', coffeesDrinksNames, coffeesDrinksPrices);
-    const beersDrinksMenu = generator.textMenuGen('beers', beersDrinksNames, beersDrinksPrices);
-    const wineDrinksMenu = generator.textMenuGen('wines', wineDrinksNames, wineDrinksPrices);
+    const teasDrinksMenu = generator.textMenuGen('tea', teasDrinksNames, teasDrinksPrices);
+    const coffeesDrinksMenu = generator.textMenuGen('coffee', coffeesDrinksNames, coffeesDrinksPrices);
+    const beersDrinksMenu = generator.textMenuGen('beer', beersDrinksNames, beersDrinksPrices);
+    const wineDrinksMenu = generator.textMenuGen('wine', wineDrinksNames, wineDrinksPrices);
 
     drinksSubContainer.append(softDrinksMenu, teasDrinksMenu, coffeesDrinksMenu, beersDrinksMenu, wineDrinksMenu);
     drinksContainer.append(drinksContainerSubtitle, drinksSubContainer);

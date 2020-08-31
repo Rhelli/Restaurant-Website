@@ -99,12 +99,17 @@ const subMenuGen = (foodType, containerTitleText, unparsedFoodNames, unparsedFoo
 const textMenuGen = (drinkType, drinkNames, drinkPrices) => {
   const drinksContainer = htmlGenerator('div', `${drinkType}-container`, `${drinkType}Container`);
   const capitalisedDrinkType = drinkType.charAt(0).toUpperCase() + drinkType.slice(1);
-  const drinksSubtitle = textGen('h5', spaceParse(`${capitalisedDrinkType}*Drinks`, '*'));
+  const drinksSubtitle = textGen('h5', spaceParse(`${capitalisedDrinkType}`, '*'));
   const menuBlock = htmlGenerator('div', `${drinkType}-drinks-menu-block`, `${drinkType}DrinksMenuBlock`);
   drinksContainer.appendChild(drinksSubtitle);
   for (let i = 0; i < drinkNames.length; i++) {
+    let container = htmlGenerator('div', 'menu-item', 'menuItem');
     let element = textGen('p', spaceParse(`${drinkNames[i]}*-*<em>£${drinkPrices[i]}</em>`, '*'));
-    drinksContainer.append(element);
+    const buttonText = textGen('p', spaceParse('Add*to*order&nbsp;<i*class="fas*fa-shopping-basket"></i*class=>', '*'));
+    let button = htmlGenerator('button', 'drink-button', `${drinkNames[i]}-button`);
+    button.appendChild(buttonText);
+    container.append(element, button);
+    drinksContainer.appendChild(container);
   }
   drinksContainer.classList.add('menu-block');
   return drinksContainer;
