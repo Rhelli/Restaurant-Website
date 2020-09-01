@@ -41,7 +41,7 @@ const subMenuGen = (foodType, containerTitleText, unparsedFoodNames, unparsedFoo
   const mainContainer = htmlGenerator('div', `${foodType}-container`, `${foodType}Container`);
   const capitalisedTitle = containerTitleText.charAt(0).toUpperCase() + containerTitleText.slice(1);
   const containerTitle = textGen('h2', `•&nbsp;${capitalisedTitle}`);
-  containerTitle.id = `${foodType}`;
+  mainContainer.id = `${foodType}`;
   mainContainer.appendChild(containerTitle);
 
   // PARSE FOOD NAMES ARRAY
@@ -75,7 +75,9 @@ const subMenuGen = (foodType, containerTitleText, unparsedFoodNames, unparsedFoo
       let row = htmlGenerator('div', `${foodType}-row`, `${foodType}Row`);
       let foodItem = htmlGenerator('div', `${foodType}-${i}`, `${foodType}${i}`);
       let foodText = htmlGenerator('div', `${foodType}-text-${i}`, `${foodType}Text${i}`);
+      foodText.classList.add(`${foodType}-text`);
       let foodImage = htmlGenerator('div', `${foodType}-image-${i}`, `${foodType}Image${i}`);
+      foodImage.classList.add(`${foodType}-image`)
       let foodTitle = textGen('h4', foodNameArray[i]);
       let foodDescription = textGen('p', foodDescriptionArray[i]);
       let foodPrice = textGen('p', `${pricesArray[i]}`);
