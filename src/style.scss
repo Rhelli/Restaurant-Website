@@ -111,23 +111,23 @@ $main-texture: url('./assets/img/textures/wavecut.png');
 
 // ANIMATIONS ---------------------------------------------------//
 .slide-in-top {
-  -webkit-animation: slide-in-top 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
-  animation: slide-in-top 0.5s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+  -webkit-animation: slide-in-top 0.25s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
+  animation: slide-in-top 0.25s cubic-bezier(0.230, 1.000, 0.320, 1.000) both;
 }
 
 .slide-out-top {
-	-webkit-animation: slide-out-top 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000) both;
-  animation: slide-out-top 0.5s cubic-bezier(0.770, 0.000, 0.175, 1.000) both;
+	-webkit-animation: slide-out-top 0.25s cubic-bezier(0.770, 0.000, 0.175, 1.000) both;
+  animation: slide-out-top 0.25s cubic-bezier(0.770, 0.000, 0.175, 1.000) both;
 }
 
 .slide-out-right {
-	-webkit-animation: slide-out-right 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-	animation: slide-out-right 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	-webkit-animation: slide-out-right 0.25s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+	animation: slide-out-right 0.25s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
 .slide-in-right {
-	-webkit-animation: slide-in-right 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
-	animation: slide-in-right 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	-webkit-animation: slide-in-right 0.25s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	animation: slide-in-right 0.25s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 
 // HTML, BODY & UNIVERSAL ----------------------------------------//
@@ -173,6 +173,7 @@ body {
   height: 65px;
   width: 100%;
   padding: 0 15px;
+  z-index: 5;
   background: $nav-texture, $page-borders;
   border-bottom: 1px solid #307E93;
   -webkit-box-shadow: 0px 4px 13px 1px rgba(22,60,69,1);

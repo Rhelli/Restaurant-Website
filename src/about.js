@@ -3,6 +3,7 @@ import * as generator from './generator';
 export default function generateAbout() {
   //CREATE THE ABOUT PAGE CONTAINER
   const aboutContainer = generator.htmlGenerator('div', 'about-container', 'aboutContainer');
+  aboutContainer.classList.add('slide-in-top');
 
   // CREATE THE ABOUT PAGE CONTENTS INNER CONTAINER AND CHILDREN
   const aboutContentsContainerGen = () => {

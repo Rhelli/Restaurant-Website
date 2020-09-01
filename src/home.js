@@ -2,6 +2,7 @@ import * as generator from './generator';
 
 export default function generateHomepage() {
   const landingContainer = generator.htmlGenerator('div', 'landing-container', 'landingContainer');
+  landingContainer.classList.add('slide-in-top');
 
   // CREATE THE LANDING TITLE
   const landingTitleGen = () => {
