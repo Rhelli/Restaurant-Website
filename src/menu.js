@@ -8,10 +8,13 @@ export default function generateMenu() {
   const menuShortcuts = () => {
     const menuShortcutsContainer = generator.htmlGenerator('div', 'menu-shortcuts', 'menuShortcuts');
     const menuShortcutsArray = ['•&nbsp;Sandwiches', '•&nbsp;Sides', '•&nbsp;Desserts', '•&nbsp;Drinks'];
+    const menuShortcutsHrefs = ['sandwiches', 'sides', 'desserts', 'drinks'];
 
     for (let i = 0; i < menuShortcutsArray.length; i++) {
       let element = generator.htmlGenerator('div', `menu-shortcut-${i}`, `menuShortcut${i}`);
-      let text = generator.textGen('p', `${menuShortcutsArray[i]}`);
+      let text = generator.textGen('a', `${menuShortcutsArray[i]}`);
+      text.href = `#${menuShortcutsHrefs[i]}`;
+      text.classList.add('scrollPoint');
       element.appendChild(text);
       menuShortcutsContainer.appendChild(element);
     }
@@ -73,8 +76,8 @@ export default function generateMenu() {
 
   const drinksMenu = () => {
     const drinksContainer = generator.htmlGenerator('div', 'drinks-container', 'drinksContainer');
-    const drinksContainerSubtitle = generator.textGen('a', '•&nbsp;Drinks');
-    drinksContainerSubtitle.href = '#Drinks';
+    const drinksContainerSubtitle = generator.textGen('h2', '•&nbsp;Drinks');
+    drinksContainerSubtitle.id = 'drinks';
     const drinksSubContainer = generator.htmlGenerator('div', 'drinks-subcontainer', 'drinksSubContainer');
 
     const softDrinksNames = ['Coca-Cola', 'San*Peligrino', 'Pepsi', 'Fanta', 'Sprite', 'Orangina', 'Lipton*Iced*Tea', 'Dr*Pepper'];
@@ -99,16 +102,36 @@ export default function generateMenu() {
     return drinksContainer;
   };
 
-  const internalLinksScroll = () => {
-    const sandwichTitle = document.getElementById('sandwichContainer');
-    const sidesTitle = document.getElementById('sidesContainer');
-    const dessertsTitle = document.getElementById('dessertsContainer');
-    const drinksTitle = document.getElementById('drinksContainer');
+  // DEFINE SMOOTH SCROLL LINKS
+  const smoothScrollTo = () => {
+    const scrollPoints = document.querySelectorAll('.scrollPoint');
+    scrollPoints.forEach(point => (point.onclick = scrollAnchors));
+  };
 
-    const scrollPoints = document.getElementsByClassName('sandwich-container sides-container desserts-container drinks-container');
-    // Added event listeners to each element
-    // https://perishablepress.com/vanilla-javascript-scroll-anchor/
-  }
+  // DEFINE SMOOTH SCROLL BEHAVIOUR
+  const scrollAnchors = (e, respond = null) => {
+    const distanceToTop = el => Math.floor(el.getBoundingClientRect().top);
+    e.preventDefault();
+    const targetID = (respond) ? respond.getAttribute('href') : this.getAttribute('href');
+    const targetAnchor = document.querySelector(targetID);
+    if (!targetID) return;
+    const originalTop = distanceToTop(targetAnchor);
+    window.scrollBy({ top: originalTop, left: 0, behaviour: 'smooth' });
+    const checkIfFinished = setInterval(() => {
+      const atBottom = window.innerHeight + window.pageYOffset > document.body.offsetHeight - 2;
+      if (distanceToTop(targetAnchor) === 0 || atBottom) {
+        targetAnchor.tabIndex = '-1';
+        targetAnchor.focus();
+        window.history.pushState('', '', targetID);
+        clearInterval(checkIfFinished);
+      }
+    }, 100);
+  };
+
+  // INITIALISE SMOOTHSCROLL IIFE
+  (function() {
+    smoothScrollTo();
+  })();
 
 
   const menuBuilder = () => {
