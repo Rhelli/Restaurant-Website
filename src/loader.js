@@ -2,6 +2,7 @@ import * as generator from './generator';
 import generateNavbar from './nav';
 import generateHomepage from './home';
 import generateAbout from './about';
+import generateMenu from './menu';
 
 export default function mainPageContainer() {
   // ASSEMBLE HOMEPAGE ELEMENTS
@@ -20,5 +21,5 @@ export default function mainPageContainer() {
     return mainContainer;
   };
 
-  return mainPageBuilder(generateAbout());
+  return mainPageBuilder(generateMenu());
 }
