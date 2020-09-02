@@ -37,11 +37,11 @@ export default function generateHomepage() {
           });
           const title = generator.textGen('h4', generator.spaceParse('Good*News!', '*'));
           const innerContainer = generator.htmlGenerator('div', 'delivery-text-container', 'deliveryTextContainer');
-          const innerText = generator.textGen('p', generator.spaceParse("Huzzagh!*It*looks*like*you're*in*our*neighborhood!*Give*us*a*call*or*order*online.", '*'));
+          const innerText = generator.textGen('p', generator.spaceParse("Huzzagh!*It*looks*like*you're*in*our*neighborhood!*Give*us*a*call*or*order*from*our*restaurant*online.", '*'));
           const ctoContainer = generator.htmlGenerator('div', 'cto-container', 'ctoContainer');
-          const phone = generator.textGen('p', generator.spaceParse('<i*class="fas*fa-phone"></i*class=>*+44*0845*9080', '*'));
+          const phone = generator.textGen('p', generator.spaceParse('<i*class="fas*fa-phone"></i*class=>**+44*0845*9080', '*'));
           const button = generator.htmlGenerator('button', 'delivery-button', 'deliveryButton');
-          const buttonText = generator.textGen('p', generator.spaceParse('<i*class="fas*fa-utensils"></i*class=>Order*online', '*'));
+          const buttonText = generator.textGen('p', generator.spaceParse('<i*class="fas*fa-utensils"></i*class=>****Order*Online', '*'));
           button.appendChild(buttonText);
           ctoContainer.append(phone, button);
           innerContainer.append(innerText, ctoContainer);
