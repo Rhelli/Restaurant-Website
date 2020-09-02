@@ -17,11 +17,56 @@ export default function generateHomepage() {
   const landingSearchBarGen = () => {
     const landingSearchContainer = generator.htmlGenerator('div', 'landing-search', 'landingSearch');
     const landingSearchBar = generator.htmlGenerator('input', 'landing-search-input', 'landingSearchInput');
+    const searchBarLoader = generator.htmlGenerator('div', 'loader', 'loader');
     const landingSearchButton = generator.htmlGenerator('button', 'landing-search-button', 'landingSearchButton');
     const buttonText = generator.spaceParse('Check/Delivery', '/');
     const searchButtonText = generator.textGen('p', buttonText);
+
+    // DEFINE THE SEARCH BAR BUTTON BEHAVIOUR AND INFORMATION POP UPS
+    landingSearchButton.addEventListener('click', (event) => {
+      if (landingSearchBar.value !== '') {
+        searchBarLoader.classList.add('spinner');
+        setTimeout(() => {
+          const container = generator.htmlGenerator('div', 'delivery-container', 'deliveryContainer');
+          const closeDeliveryButton = generator.htmlGenerator('button', 'close-delivery-button', 'closeDeliveryButton');
+          const closeDeliveryButtonText = generator.textGen('p', generator.spaceParse('<i class="fas fa-times-circle"></i>', '*'));
+          closeDeliveryButton.appendChild(closeDeliveryButtonText);
+          closeDeliveryButton.addEventListener('click', (event) => {
+            const popUp = document.getElementById('deliveryContainer');
+            landingContainer.removeChild(popUp);
+          });
+          const title = generator.textGen('h4', generator.spaceParse('Good*News!', '*'));
+          const innerContainer = generator.htmlGenerator('div', 'delivery-text-container', 'deliveryTextContainer');
+          const innerText = generator.textGen('p', generator.spaceParse("Huzzagh!*It*looks*like*you're*in*our*neighborhood!*Give*us*a*call*or*order*online.", '*'));
+          const ctoContainer = generator.htmlGenerator('div', 'cto-container', 'ctoContainer');
+          const phone = generator.textGen('p', generator.spaceParse('<i*class="fas*fa-phone"></i*class=>*+44*0845*9080', '*'));
+          const button = generator.htmlGenerator('button', 'delivery-button', 'deliveryButton');
+          const buttonText = generator.textGen('p', generator.spaceParse('<i*class="fas*fa-utensils"></i*class=>Order*online', '*'));
+          button.appendChild(buttonText);
+          ctoContainer.append(phone, button);
+          innerContainer.append(innerText, ctoContainer);
+          container.append(closeDeliveryButton, title, innerContainer);
+          searchBarLoader.classList.remove('spinner');
+          landingContainer.appendChild(container);
+        }, Math.floor(Math.random() * (3000 - 800 + 1)) + 800);
+      } else {
+        const failContainer = generator.htmlGenerator('div', 'delivery-error-container', 'deliveryErrorContainer');
+        const closeErrorButton = generator.htmlGenerator('button', 'close-error', 'closeError');
+        const closeErrorButtonText = generator.textGen('p', generator.spaceParse('<i class="fas fa-times-circle"></i>', '*'));
+        closeErrorButton.appendChild(closeErrorButtonText);
+        closeErrorButton.addEventListener('click', (event) => {
+          const errorPopUp = document.getElementById('deliveryErrorContainer');
+          landingContainer.removeChild(errorPopUp);
+        });
+        const errorTitle = generator.textGen('h4', 'Oops!');
+        const errorText = generator.textGen('p', generator.spaceParse("It looks like you didn't search for a location for delivery! Please try again.", '*'));
+        failContainer.append(closeErrorButton, errorTitle, errorText);
+        landingContainer.appendChild(failContainer);
+      }
+    });
     landingSearchButton.appendChild(searchButtonText);
     landingSearchContainer.appendChild(landingSearchBar);
+    landingSearchContainer.appendChild(searchBarLoader);
     landingSearchContainer.appendChild(landingSearchButton);
     return landingSearchContainer;
   };
