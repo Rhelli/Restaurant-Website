@@ -317,17 +317,52 @@ body {
     position: relative;
     width: 66%;
     height: 50px;
-    background: red;
+    background: transparent;
     margin-bottom: 30px;
 
     input {
       height: 50px;
       width: 80%;
+      outline: none;
+      background-color: rgba(256, 256, 256, 0.7);
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+      border: 2px solid rgba(256, 256, 256, 0.8);
+      padding-left: 15px;
+      font-size: 16px;
+
+      &::placeholder {
+        color: #AAB7B8;
+      }
     }
 
     button {
+      background-color: rgba(88, 179, 203, 0.8);
+      border: none;
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
+      margin-left: 5px;
       height: 50px;
       width: 20%;
+      padding: 0 10px;
+      transition: 0.15s;
+
+      p {
+        font-size: 16px;
+        color: #fff;
+        padding: 0;
+        padding-right: 10px;
+        margin: 0;
+      }
+
+      &:hover {
+        background-color: rgba(0, 121, 107, 0.8);
+        transition: 0.2s;
+      }
+
+      &:focus {
+        outline: none;
+      }
     }
 
     .spinner {
@@ -337,7 +372,7 @@ body {
       border: 10px double #f3f3f3;
       border-top: 10px double #40a8c4;
       border-radius: 50%;
-      width: 31px;
+      width: 30px;
       height: 30px;
       padding: 0;
       margin: 0;

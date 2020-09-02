@@ -17,6 +17,7 @@ export default function generateHomepage() {
   const landingSearchBarGen = () => {
     const landingSearchContainer = generator.htmlGenerator('div', 'landing-search', 'landingSearch');
     const landingSearchBar = generator.htmlGenerator('input', 'landing-search-input', 'landingSearchInput');
+    landingSearchBar.placeholder = generator.spaceParse('Enter*Your*Address*To*See*If*We*Deliver*To*You...', '*');
     const searchBarLoader = generator.htmlGenerator('div', 'loader', 'loader');
     const landingSearchButton = generator.htmlGenerator('button', 'landing-search-button', 'landingSearchButton');
     const buttonText = generator.spaceParse('Check/Delivery', '/');
