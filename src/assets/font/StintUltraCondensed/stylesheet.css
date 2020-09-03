@@ -1,9 +1,9 @@
 @font-face {
-    font-family: 'Stint Ultra Condensed';
-    src: url('StintUltraCondensed-Regular.woff2') format('woff2'),
-        url('StintUltraCondensed-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'Stint Ultra Condensed';
+  src:
+    url('StintUltraCondensed-Regular.woff2') format('woff2'),
+    url('StintUltraCondensed-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
-

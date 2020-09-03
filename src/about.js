@@ -2,7 +2,7 @@ import * as generator from './generator';
 import pageSwap from './eventHandler';
 
 export default function generateAbout() {
-  //CREATE THE ABOUT PAGE CONTAINER
+  // CREATE THE ABOUT PAGE CONTAINER
   const aboutContainer = generator.htmlGenerator('div', 'about-container', 'aboutContainer');
   aboutContainer.classList.add('slide-in-top');
 

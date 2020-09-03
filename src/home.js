@@ -9,7 +9,7 @@ export default function generateHomepage() {
   const openingHours = () => {
     const openingHours = generator.htmlGenerator('div', 'landing-opening-times', 'landingOpeningTimes');
     const openingHoursText = generator.textGen('p', generator.spaceParse('Opening*Hours:*Mon*-*Sat*•*9am*-*6pm', '*'));
-    const location = generator.textGen('p', generator.spaceParse('14*James*St,*Covent*Garden,*WC2E*8BU', '*'))
+    const location = generator.textGen('p', generator.spaceParse('14*James*St,*Covent*Garden,*WC2E*8BU', '*'));
     openingHours.append(openingHoursText, location);
     return openingHours;
   };
@@ -52,9 +52,7 @@ export default function generateHomepage() {
           const ctoContainer = generator.htmlGenerator('div', 'cto-container', 'ctoContainer');
           const phone = generator.textGen('p', generator.spaceParse('<i*class="fas*fa-phone"></i*class=>**+44*0845*9080', '*'));
           const button = generator.htmlGenerator('button', 'delivery-button', 'deliveryButton');
-          button.addEventListener('click', (event) => {
-            return pageSwap('navMenuButton');
-          });
+          button.addEventListener('click', (event) => pageSwap('navMenuButton'));
           const buttonText = generator.textGen('p', generator.spaceParse('<i*class="fas*fa-utensils"></i*class=>****Order*Online', '*'));
           button.appendChild(buttonText);
           ctoContainer.append(phone, button);
@@ -90,7 +88,7 @@ export default function generateHomepage() {
     const landingButtonsContainer = generator.htmlGenerator('div', 'landing-buttons', 'landingButtons');
     for (let i = 0; i < 3; i++) {
       const socialId = ['FB', 'IG', 'TW'];
-      const socialIcons = ['<i class="fab fa-facebook-f"></i>', '<i class="fab fa-instagram"></i>', '<i class="fab fa-twitter"></i>']
+      const socialIcons = ['<i class="fab fa-facebook-f"></i>', '<i class="fab fa-instagram"></i>', '<i class="fab fa-twitter"></i>'];
       const landingButtons = generator.htmlGenerator('div', `landing-button-${i}`, `social${socialId[i]}`);
       const landingButtonText = generator.textGen('p', `${socialIcons[i]}&nbsp;${socialId[i]}`);
       landingButtons.appendChild(landingButtonText);
