@@ -25,6 +25,7 @@
     "css-loader": "^4.2.2",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.3.0",
+    "preload-webpack-plugin": "^3.0.0-beta.3",
     "sass": "^1.26.10",
     "sass-loader": "^10.0.0",
     "style-loader": "^1.2.1",
@@ -32,7 +33,7 @@
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   },
-  "dependencies" : {
+  "dependencies": {
     "@fortawesome/fontawesome-free": "^5.14.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-brands-svg-icons": "^5.14.0",

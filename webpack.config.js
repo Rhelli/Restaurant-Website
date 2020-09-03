@@ -1,6 +1,7 @@
 const path = require('path');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
+const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -18,8 +19,10 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
     new HTMLWebpackPlugin({
+      favicon: './src/assets/img/sandwich.png',
       title: 'The Earl Of Sandwich',
     }),
+    new PreloadWebpackPlugin(),
   ],
   module: {
     rules: [
