@@ -1,10 +1,22 @@
 import * as generator from './generator';
-import pageSwap from './eventHandler';
+import generateMenu from './menu';
 
 export default function generateAbout() {
-  //CREATE THE ABOUT PAGE CONTAINER
+  // CREATE THE ABOUT PAGE CONTAINER
   const aboutContainer = generator.htmlGenerator('div', 'about-container', 'aboutContainer');
   aboutContainer.classList.add('slide-in-top');
+
+  // BUTTON FUNCTIONALITY TO REDIRECT TO THE MENU
+  const pageSwap = () => {
+    const mainContainer = document.getElementById('content');
+    const currentPage = mainContainer.lastChild;
+    currentPage.classList.remove('slide-in-top');
+    currentPage.classList.add('slide-out-top');
+    setTimeout(() => {
+      mainContainer.removeChild(mainContainer.lastChild);
+      mainContainer.appendChild(generateMenu());
+    }, 400);
+  };
 
   // CREATE THE ABOUT PAGE CONTENTS INNER CONTAINER AND CHILDREN
   const aboutContentsContainerGen = () => {
@@ -21,8 +33,8 @@ export default function generateAbout() {
     const buttonInnerText = generator.spaceParse('Discover*Our*Menu<i*class="fas*fa-arrow-circle-right"></i*class=>', '*');
     const buttonText = generator.textGen('p', buttonInnerText);
     aboutButton.appendChild(buttonText);
-    aboutButton.addEventListener('click', (event) => {
-      pageSwap('navMenuButton');
+    aboutButton.addEventListener('click', () => {
+      pageSwap();
     });
 
     const aboutContentImage = generator.htmlGenerator('div', 'about-image-container');

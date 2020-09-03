@@ -49,7 +49,7 @@ const subMenuGen = (foodType, containerTitleText, unparsedFoodNames, unparsedFoo
     const foodNames = [];
 
     for (let i = 0; i < unparsedFoodNames.length; i++) {
-      let parsedFoodName = spaceParse(unparsedFoodNames[i], '*');
+      const parsedFoodName = spaceParse(unparsedFoodNames[i], '*');
       foodNames.push(parsedFoodName);
     }
     return foodNames;
@@ -60,7 +60,7 @@ const subMenuGen = (foodType, containerTitleText, unparsedFoodNames, unparsedFoo
     const foodDescriptions = [];
 
     for (let i = 0; i < unparsedFoodDescriptions.length; i++) {
-      let parsedFoodDescription = spaceParse(unparsedFoodDescriptions[i], '*');
+      const parsedFoodDescription = spaceParse(unparsedFoodDescriptions[i], '*');
       foodDescriptions.push(parsedFoodDescription);
     }
     return foodDescriptions;
@@ -68,22 +68,22 @@ const subMenuGen = (foodType, containerTitleText, unparsedFoodNames, unparsedFoo
 
   // BUILD SUB-MENU
   const menuBuilder = () => {
-    let foodNameArray = foodNames();
-    let foodDescriptionArray = foodDescriptions();
+    const foodNameArray = foodNames();
+    const foodDescriptionArray = foodDescriptions();
 
     for (let i = 0; i < foodNameArray.length; i++) {
-      let row = htmlGenerator('div', `${foodType}-row`, `${foodType}Row`);
-      let foodItem = htmlGenerator('div', `${foodType}-${i}`, `${foodType}${i}`);
-      let foodText = htmlGenerator('div', `${foodType}-text-${i}`, `${foodType}Text${i}`);
+      const row = htmlGenerator('div', `${foodType}-row`, `${foodType}Row`);
+      const foodItem = htmlGenerator('div', `${foodType}-${i}`, `${foodType}${i}`);
+      const foodText = htmlGenerator('div', `${foodType}-text-${i}`, `${foodType}Text${i}`);
       foodText.classList.add(`${foodType}-text`);
-      let foodImage = htmlGenerator('div', `${foodType}-image-${i}`, `${foodType}Image${i}`);
-      foodImage.classList.add(`${foodType}-image`)
-      let foodTitle = textGen('h4', foodNameArray[i]);
-      let foodDescription = textGen('p', foodDescriptionArray[i]);
-      let foodPrice = textGen('p', `${pricesArray[i]}`);
-      let button = htmlGenerator('button', 'add-to-order-button', 'addToOrderButton');
-      let addToOrder = spaceParse('Add*to*order<i*class="fas*fa-shopping-basket"></i*class=>', '*');
-      let buttonText = textGen('p', addToOrder);
+      const foodImage = htmlGenerator('div', `${foodType}-image-${i}`, `${foodType}Image${i}`);
+      foodImage.classList.add(`${foodType}-image`);
+      const foodTitle = textGen('h4', foodNameArray[i]);
+      const foodDescription = textGen('p', foodDescriptionArray[i]);
+      const foodPrice = textGen('p', `${pricesArray[i]}`);
+      const button = htmlGenerator('button', 'add-to-order-button', 'addToOrderButton');
+      const addToOrder = spaceParse('Add*to*order<i*class="fas*fa-shopping-basket"></i*class=>', '*');
+      const buttonText = textGen('p', addToOrder);
       button.appendChild(buttonText);
       foodText.append(foodTitle, foodDescription, foodPrice, button);
 
@@ -106,10 +106,10 @@ const textMenuGen = (drinkType, drinkNames, drinkPrices) => {
   const menuBlock = htmlGenerator('div', `${drinkType}-drinks-menu-block`, `${drinkType}DrinksMenuBlock`);
   drinksContainer.appendChild(drinksSubtitle);
   for (let i = 0; i < drinkNames.length; i++) {
-    let container = htmlGenerator('div', 'menu-item', 'menuItem');
-    let element = textGen('p', spaceParse(`${drinkNames[i]}*-*<em>£${drinkPrices[i]}</em>`, '*'));
+    const container = htmlGenerator('div', 'menu-item', 'menuItem');
+    const element = textGen('p', spaceParse(`${drinkNames[i]}*-*<em>£${drinkPrices[i]}</em>`, '*'));
     const buttonText = textGen('p', spaceParse('Add*to*order&nbsp;<i*class="fas*fa-shopping-basket"></i*class=>', '*'));
-    let button = htmlGenerator('button', 'drink-button', `${drinkNames[i]}-button`);
+    const button = htmlGenerator('button', 'drink-button', `${drinkNames[i]}-button`);
     button.appendChild(buttonText);
     container.append(element, button);
     drinksContainer.appendChild(container);
@@ -118,4 +118,6 @@ const textMenuGen = (drinkType, drinkNames, drinkPrices) => {
   return drinksContainer;
 };
 
-export { textGen, spaceParse, htmlGenerator, imgGen, sequentialAppend, subMenuGen, textMenuGen };
+export {
+  textGen, spaceParse, htmlGenerator, imgGen, sequentialAppend, subMenuGen, textMenuGen,
+};

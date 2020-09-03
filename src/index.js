@@ -11,7 +11,7 @@ import generateAbout from './about';
 import generateMenu from './menu';
 
 // INITIALIZE PAGE CONTAINER AND DEFAULT CONTENTS
-(function() {
+(function () {
   document.body.appendChild(mainPageContainer());
   const mainContainer = document.getElementById('content');
   mainContainer.appendChild(generateNavbar());
@@ -27,7 +27,10 @@ const navLinks = [navHomeButton, navMenuButton, navAboutButton];
 
 // DEFINE TAB SWAPPING & ANIMATION BEHAVIOUR
 export default function pageSwapHandle(page) {
-  const isolatedPageName = page.slice(3).split('').reverse().slice(6).reverse().join('').toLowerCase();
+  const isolatedPageName = page.slice(3).split('').reverse().slice(6)
+    .reverse()
+    .join('')
+    .toLowerCase();
   if (mainContainer.lastChild !== `${isolatedPageName}Container`) {
     if (mainContainer.lastChild.id === 'menuContainer') {
       const currentPage = mainContainer.lastChild;
@@ -60,10 +63,10 @@ export default function pageSwapHandle(page) {
 }
 
 // ADD TABS EVENT LISTENERS
-(function() {
+(function () {
   for (let i = 0; i < navLinks.length; i++) {
     // eslint-disable-next-line no-loop-func
-    navLinks[i].addEventListener('click', (event) => {
+    navLinks[i].addEventListener('click', () => {
       const identifier = navLinks[i].id;
       pageSwapHandle(identifier);
     });

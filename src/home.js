@@ -1,5 +1,5 @@
 import * as generator from './generator';
-import pageSwap from './eventHandler';
+import generateMenu from './menu';
 
 export default function generateHomepage() {
   const landingContainer = generator.htmlGenerator('div', 'landing-container', 'landingContainer');
@@ -9,7 +9,7 @@ export default function generateHomepage() {
   const openingHours = () => {
     const openingHours = generator.htmlGenerator('div', 'landing-opening-times', 'landingOpeningTimes');
     const openingHoursText = generator.textGen('p', generator.spaceParse('Opening*Hours:*Mon*-*Sat*•*9am*-*6pm', '*'));
-    const location = generator.textGen('p', generator.spaceParse('14*James*St,*Covent*Garden,*WC2E*8BU', '*'))
+    const location = generator.textGen('p', generator.spaceParse('14*James*St,*Covent*Garden,*WC2E*8BU', '*'));
     openingHours.append(openingHoursText, location);
     return openingHours;
   };
@@ -23,6 +23,18 @@ export default function generateHomepage() {
     return landingTitleContainer;
   };
 
+  // BUTTON FUNCTIONALITY TO REDIRECT TO THE MENU
+  const pageSwap = () => {
+    const mainContainer = document.getElementById('content');
+    const currentPage = mainContainer.lastChild;
+    currentPage.classList.remove('slide-in-top');
+    currentPage.classList.add('slide-out-top');
+    setTimeout(() => {
+      mainContainer.removeChild(mainContainer.lastChild);
+      mainContainer.appendChild(generateMenu());
+    }, 400);
+  };
+
   // CREATE THE LANDING SEARCH BAR
   const landingSearchBarGen = () => {
     const landingSearchContainer = generator.htmlGenerator('div', 'landing-search', 'landingSearch');
@@ -34,7 +46,7 @@ export default function generateHomepage() {
     const searchButtonText = generator.textGen('p', buttonText);
 
     // DEFINE THE SEARCH BAR BUTTON BEHAVIOUR AND INFORMATION POP UPS
-    landingSearchButton.addEventListener('click', (event) => {
+    landingSearchButton.addEventListener('click', () => {
       if (landingSearchBar.value !== '') {
         searchBarLoader.classList.add('spinner');
         setTimeout(() => {
@@ -42,7 +54,7 @@ export default function generateHomepage() {
           const closeDeliveryButton = generator.htmlGenerator('button', 'close-delivery-button', 'closeDeliveryButton');
           const closeDeliveryButtonText = generator.textGen('p', generator.spaceParse('<i class="fas fa-times-circle"></i>', '*'));
           closeDeliveryButton.appendChild(closeDeliveryButtonText);
-          closeDeliveryButton.addEventListener('click', (event) => {
+          closeDeliveryButton.addEventListener('click', () => {
             const popUp = document.getElementById('deliveryContainer');
             landingContainer.removeChild(popUp);
           });
@@ -52,9 +64,7 @@ export default function generateHomepage() {
           const ctoContainer = generator.htmlGenerator('div', 'cto-container', 'ctoContainer');
           const phone = generator.textGen('p', generator.spaceParse('<i*class="fas*fa-phone"></i*class=>**+44*0845*9080', '*'));
           const button = generator.htmlGenerator('button', 'delivery-button', 'deliveryButton');
-          button.addEventListener('click', (event) => {
-            return pageSwap('navMenuButton');
-          });
+          button.addEventListener('click', () => pageSwap('navMenuButton'));
           const buttonText = generator.textGen('p', generator.spaceParse('<i*class="fas*fa-utensils"></i*class=>****Order*Online', '*'));
           button.appendChild(buttonText);
           ctoContainer.append(phone, button);
@@ -68,7 +78,7 @@ export default function generateHomepage() {
         const closeErrorButton = generator.htmlGenerator('button', 'close-error', 'closeError');
         const closeErrorButtonText = generator.textGen('p', generator.spaceParse('<i class="fas fa-times-circle"></i>', '*'));
         closeErrorButton.appendChild(closeErrorButtonText);
-        closeErrorButton.addEventListener('click', (event) => {
+        closeErrorButton.addEventListener('click', () => {
           const errorPopUp = document.getElementById('deliveryErrorContainer');
           landingContainer.removeChild(errorPopUp);
         });
@@ -90,7 +100,7 @@ export default function generateHomepage() {
     const landingButtonsContainer = generator.htmlGenerator('div', 'landing-buttons', 'landingButtons');
     for (let i = 0; i < 3; i++) {
       const socialId = ['FB', 'IG', 'TW'];
-      const socialIcons = ['<i class="fab fa-facebook-f"></i>', '<i class="fab fa-instagram"></i>', '<i class="fab fa-twitter"></i>']
+      const socialIcons = ['<i class="fab fa-facebook-f"></i>', '<i class="fab fa-instagram"></i>', '<i class="fab fa-twitter"></i>'];
       const landingButtons = generator.htmlGenerator('div', `landing-button-${i}`, `social${socialId[i]}`);
       const landingButtonText = generator.textGen('p', `${socialIcons[i]}&nbsp;${socialId[i]}`);
       landingButtons.appendChild(landingButtonText);
@@ -101,7 +111,12 @@ export default function generateHomepage() {
 
   // ASSEMBLE ALL PAGE ELEMENTS AND BUILD LANDING PAGE
   const landingContainerBuilder = () => {
-    landingContainer.append(openingHours(), landingTitleGen(), landingSearchBarGen(), landingSocialButtonsGen());
+    landingContainer.append(
+      openingHours(),
+      landingTitleGen(),
+      landingSearchBarGen(),
+      landingSocialButtonsGen(),
+    );
     return landingContainer;
   };
 
