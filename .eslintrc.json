@@ -14,7 +14,8 @@
     "no-param-reassign": "off",
     "eol-last": "off",
     "arrow-parens": "off",
-    "no-plusplus": "off"
+    "no-plusplus": "off",
+    "func-names": "off"
   },
   "ignorePatterns": [
     "dist/",

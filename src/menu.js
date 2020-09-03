@@ -98,15 +98,15 @@ export default function generateMenu() {
     const beersDrinksMenu = generator.textMenuGen('beer', beersDrinksNames, beersDrinksPrices);
     const wineDrinksMenu = generator.textMenuGen('wine', wineDrinksNames, wineDrinksPrices);
 
-    drinksSubContainer.append(softDrinksMenu, teasDrinksMenu, coffeesDrinksMenu, beersDrinksMenu, wineDrinksMenu);
+    drinksSubContainer.append(
+      softDrinksMenu,
+      teasDrinksMenu,
+      coffeesDrinksMenu,
+      beersDrinksMenu,
+      wineDrinksMenu,
+    );
     drinksContainer.append(drinksContainerSubtitle, drinksSubContainer);
     return drinksContainer;
-  };
-
-  // DEFINE SMOOTH SCROLL LINKS
-  const smoothScrollTo = () => {
-    const scrollPoints = document.querySelectorAll('.scrollPoint');
-    scrollPoints.forEach(point => (point.onclick = scrollAnchors));
   };
 
   // DEFINE SMOOTH SCROLL BEHAVIOUR
@@ -117,7 +117,7 @@ export default function generateMenu() {
     const targetAnchor = document.querySelector(targetID);
     if (!targetID) return;
     const originalTop = distanceToTop(targetAnchor);
-    const menuContainer = getElementById('menuContainer');
+    const menuContainer = document.getElementById('menuContainer');
     menuContainer.scrollBy({ top: originalTop, left: 0, behavior: 'smooth' });
     const checkIfFinished = setInterval(() => {
       const atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
@@ -130,6 +130,14 @@ export default function generateMenu() {
     }, 100);
   };
 
+  // DEFINE SMOOTH SCROLL LINKS
+  const smoothScrollTo = () => {
+    const scrollPoints = document.querySelectorAll('.scrollPoint');
+    for (let i = 0; i < scrollPoints.length; i++) {
+      scrollPoints[i].onclick = scrollAnchors;
+    }
+  };
+
   // INITIALISE SMOOTHSCROLL IIFE
   (function () {
     smoothScrollTo();
@@ -137,7 +145,14 @@ export default function generateMenu() {
 
 
   const menuBuilder = () => {
-    menuContainer.append(menuShortcuts(), menuTitle, sandwichMenu(), sidesMenu(), dessertMenu(), drinksMenu());
+    menuContainer.append(
+    menuShortcuts(),
+    menuTitle,
+    sandwichMenu(),
+    sidesMenu(),
+    dessertMenu(),
+    drinksMenu(),
+  );
     return menuContainer;
   };
 

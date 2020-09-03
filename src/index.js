@@ -66,7 +66,7 @@ export default function pageSwapHandle(page) {
 (function () {
   for (let i = 0; i < navLinks.length; i++) {
     // eslint-disable-next-line no-loop-func
-    navLinks[i].addEventListener('click', (event) => {
+    navLinks[i].addEventListener('click', () => {
       const identifier = navLinks[i].id;
       pageSwapHandle(identifier);
     });
