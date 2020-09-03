@@ -26,7 +26,7 @@ const navAboutButton = document.getElementById('navAboutButton');
 const navLinks = [navHomeButton, navMenuButton, navAboutButton];
 
 // DEFINE TAB SWAPPING & ANIMATION BEHAVIOUR
-const pageSwapHandle = (page) => {
+export default function pageSwapHandle(page) {
   const isolatedPageName = page.slice(3).split('').reverse().slice(6).reverse().join('').toLowerCase();
   if (mainContainer.lastChild !== `${isolatedPageName}Container`) {
     if (mainContainer.lastChild.id === 'menuContainer') {
@@ -57,7 +57,7 @@ const pageSwapHandle = (page) => {
       }, 400);
     }
   }
-};
+}
 
 // ADD TABS EVENT LISTENERS
 (function() {

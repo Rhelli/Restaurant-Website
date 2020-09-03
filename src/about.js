@@ -1,4 +1,5 @@
 import * as generator from './generator';
+import pageSwap from './eventHandler';
 
 export default function generateAbout() {
   //CREATE THE ABOUT PAGE CONTAINER
@@ -13,13 +14,16 @@ export default function generateAbout() {
     const contentTabTitle = generator.textGen('h3', 'About Us');
     const aboutContentTitleText = generator.spaceParse('The/Original/-/Since/1762.', '/');
     const aboutContentTitle = generator.textGen('h1', aboutContentTitleText);
-    const aboutContentParagraphText = generator.spaceParse("Here*at*The*Earl of Sandwich,*we*have*been*making*sandwiches*for*over*250*years.*Through*time,*passing*and*hard*work,*we*have*perfected*the*food*cuisine*that*changed*lunchtime*for*the*world*-*the*humble*sandwich.<br/><br/>Founded*in*1764,*by*the*Sandwich*family*shortly*after*the*Earl's*culinary*invention,*the*original*<i>Sandwiche</i>*shop*still*stands*today.", '*');
+    const aboutContentParagraphText = generator.spaceParse("Here*at*The*Earl*of*Sandwich,*we*have*been*making*sandwiches*for*over*250*years.*Through*time,*passing*and*hard*work,*we*have*perfected*the*food*cuisine*that*changed*lunchtime*for*the*world*-*the*humble*sandwich.<br/><br/>Founded*in*1764,*by*the*Sandwich*family*shortly*after*the*Earl's*culinary*invention,*the*original*<i>Sandwiche</i>*shop*still*stands*today.</br></br>These*days,*we're*open*9am*till*6pm*Monday*through*Saturday,*in*Covent*Garden*Square*London.*So*come*join*us*for*a*bite*to*eat!", '*');
     const aboutContentParagraph = generator.textGen('p', aboutContentParagraphText);
 
     const aboutButton = generator.htmlGenerator('button', 'about-button', 'aboutButton');
     const buttonInnerText = generator.spaceParse('Discover*Our*Menu<i*class="fas*fa-arrow-circle-right"></i*class=>', '*');
     const buttonText = generator.textGen('p', buttonInnerText);
     aboutButton.appendChild(buttonText);
+    aboutButton.addEventListener('click', (event) => {
+      pageSwap('navMenuButton');
+    });
 
     const aboutContentImage = generator.htmlGenerator('div', 'about-image-container');
 
