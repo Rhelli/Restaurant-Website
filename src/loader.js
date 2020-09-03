@@ -1,25 +1,11 @@
 import * as generator from './generator';
-import generateNavbar from './nav';
-import generateHomepage from './home';
-import generateAbout from './about';
-import generateMenu from './menu';
 
 export default function mainPageContainer() {
   // ASSEMBLE HOMEPAGE ELEMENTS
   const mainContainer = generator.htmlGenerator('div', 'main-container', 'content');
-  mainContainer.appendChild(generateNavbar());
-  mainContainer.appendChild(generateHomepage());
-
-  // BUILD DEFAULT HOMEPAGE / BUILD NEW PAGE ON CHANGE
-  const mainPageBuilder = (page) => {
-    if (page) {
-      const changePage = mainContainer;
-      changePage.removeChild(changePage.lastChild);
-      changePage.appendChild(page);
-      return changePage;
-    }
-    return mainContainer;
-  };
-
-  return mainPageBuilder(generateMenu());
+  const credits = generator.htmlGenerator('div', 'credits');
+  const creditsText = generator.textGen('p', generator.spaceParse('Lovingly*made*with*sandwiches*at*hand*by*Rory*Hellier.*<a*href="https://github.com/Rhelli">Come*and*find*me*on*Github</a*href=>*for*more*projects*like*this.*2020.', '*'));
+  credits.appendChild(creditsText);
+  mainContainer.appendChild(credits);
+  return mainContainer;
 }

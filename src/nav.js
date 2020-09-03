@@ -10,6 +10,7 @@ export default function generateNavbar() {
     const logo = generator.imgGen('img', 'nav-logo', '../src/assets/img/icon.png');
     const text = generator.spaceParse('The/Earl/Of/Sandwich', '/');
     const logoText = generator.textGen('h4', text);
+    logoText.id = 'navHomepageButton';
     logoContainer.appendChild(logo);
     logoContainer.appendChild(logoText);
     return logoContainer;
@@ -17,13 +18,15 @@ export default function generateNavbar() {
 
   // CREATE NAV TABS
   const navTabGen = () => {
-    const tabClass = ['menu-tab', 'delivery-tab', 'about-tab'];
-    const tabName = ['Menu', 'Delivery', 'About Us'];
+    const tabClass = ['menu-tab', 'about-tab'];
+    const tabName = ['Menu', 'About Us'];
+    const tabID = ['navMenuButton', 'navAboutButton'];
     const tabArray = [];
 
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < tabName.length; i++) {
       const div = generator.htmlGenerator('div', tabClass[i]);
       const tabText = generator.textGen('h3', tabName[i]);
+      tabText.id = `${tabID[i]}`;
       div.appendChild(tabText);
       tabArray.push(div);
     }
