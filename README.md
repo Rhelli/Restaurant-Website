@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="previews/preview-image.png" alt="The Restaurant Homepage" width="900" height="auto">
+  <img src="previews/splash.png" alt="The Restaurant Homepage" width="900" height="auto">
 
   <h1 align="center">🥪 Restaurant Website</h1>
 
@@ -120,7 +120,7 @@ There are a few commands that you can use interact with the project:
 
 Contributions, issues and feature requests are more than welcome! 
 
-If you have any problems running or setting up this project, please submit it as a bug on the [issues page.](https://github.com/Rhelli/Restaurant-Website/issues) right away!
+If you have any problems running or setting up this project, please submit it as a bug on the [issues page](https://github.com/Rhelli/Restaurant-Website/issues) right away!
 
 If you want to make your own changes, modifications or improvements, go ahead and Fork it!
 1. [Fork it](https://github.com/Rhelli/Restaurant-Website/fork)
