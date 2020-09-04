@@ -1,5 +1,4 @@
 import * as generator from './generator';
-import generateHomepage from './home';
 
 const generateMenu = () => {
   const menuContainer = generator.htmlGenerator('div', 'menu-container', 'menuContainer');
