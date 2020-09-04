@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 export default function htmlGenerator(tag, className, idName = null) {
   const element = document.createElement(tag);
   element.classList.add(className);
@@ -11,15 +12,7 @@ const textGen = (tag, text) => {
   return element;
 };
 
-const imgGen = (tag, className, src, idName = false) => {
-  const element = document.createElement(tag);
-  element.classList.add(className);
-  element.src = src;
-  return element;
-};
-
 const sequentialAppend = (parent, array) => {
-  const element = array;
   for (let i = 0, l = array.length; i < l; i++) {
     parent.appendChild(array[i]);
   }
@@ -36,7 +29,13 @@ const spaceParse = (text, symbol = null) => {
   return arr.join('');
 };
 
-const subMenuGen = (foodType, containerTitleText, unparsedFoodNames, unparsedFoodDescriptions, pricesArray) => {
+const subMenuGen = (
+  foodType,
+  containerTitleText,
+  unparsedFoodNames,
+  unparsedFoodDescriptions,
+  pricesArray,
+) => {
   // CREATE CONTAINER, CAPITALISE FOOD TYPE AND APPEND IT TO THE CONTAINER
   const mainContainer = htmlGenerator('div', `${foodType}-container`, `${foodType}Container`);
   const capitalisedTitle = containerTitleText.charAt(0).toUpperCase() + containerTitleText.slice(1);
@@ -119,5 +118,5 @@ const textMenuGen = (drinkType, drinkNames, drinkPrices) => {
 };
 
 export {
-  textGen, spaceParse, htmlGenerator, imgGen, sequentialAppend, subMenuGen, textMenuGen,
+  textGen, spaceParse, htmlGenerator, sequentialAppend, subMenuGen, textMenuGen,
 };
