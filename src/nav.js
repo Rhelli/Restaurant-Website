@@ -1,6 +1,6 @@
 import * as generator from './generator';
 
-export default function generateNavbar() {
+const generateNavbar = () => {
   // CREATE NAV CONTAINER
   const navbarContainer = generator.htmlGenerator('div', 'navbar-container', 'navbarContainer');
 
@@ -40,4 +40,6 @@ export default function generateNavbar() {
   };
 
   return navbarBuilder();
-}
+};
+
+export default generateNavbar;

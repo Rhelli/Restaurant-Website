@@ -13,7 +13,7 @@ module.exports = {
     contentBase: path.join(__dirname, 'dist'),
   },
   output: {
-    filename: '[name].bundle.js',
+    filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
   },
   plugins: [

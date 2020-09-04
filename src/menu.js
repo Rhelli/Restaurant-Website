@@ -1,6 +1,7 @@
 import * as generator from './generator';
+import generateHomepage from './home';
 
-export default function generateMenu() {
+const generateMenu = () => {
   const menuContainer = generator.htmlGenerator('div', 'menu-container', 'menuContainer');
   menuContainer.classList.add('slide-in-right');
   const menuTitle = generator.textGen('h1', 'Menu');
@@ -157,4 +158,6 @@ export default function generateMenu() {
   };
 
   return menuBuilder();
-}
+};
+
+export default generateMenu;

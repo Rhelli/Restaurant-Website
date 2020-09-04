@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
-export default function htmlGenerator(tag, className, idName = null) {
+const htmlGenerator = (tag, className, idName = null) => {
   const element = document.createElement(tag);
   element.classList.add(className);
   if (idName) element.id = idName;
   return element;
-}
+};
 
 const textGen = (tag, text) => {
   const element = document.createElement(tag);
