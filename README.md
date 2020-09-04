@@ -75,11 +75,11 @@ For the live site, [head here.](https://the-earl-of-sandwich.netlify.app/)
 
 4. Time to install Webpack! Ensuring you're at this repo's root, enter the following command into your terminal. This will install webpack locally (to this project only):
     
-        `npm install --save-dev webpack`
+        npm install --save-dev webpack
 
 5. Finally, once webpack has installed successfully, run the following command to install all of the projects dependencies:
 
-        `npm install`
+        npm install
 
 #### Usage
 There are a few commands that you can use interact with the project:
