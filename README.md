@@ -9,7 +9,7 @@
 </h3>
 <p align="center">
     <br />
-    <a href="https://murmuring-scrubland-45037.herokuapp.com/"><strong>Visit The Site »</strong></a>
+    <a href="https://the-earl-of-sandwich.netlify.app/"><strong>Visit The Site »</strong></a>
     <br />
     <br />
     <a href="https://github.com/Rhelli/Restaurant-Website/archive/develop.zip">Download this repository</a>
@@ -22,15 +22,15 @@
 
 
 ## Table of Contents
-  - [The Project Brief](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-the-project-brief)
-  - [The Nitty Gritty](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-the-nitty-gritty)
-  - [Tools & Technology Used](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-tools--technology-used)
-  - [Setup & Use](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-setup--use)
-  - [Showcase](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#%EF%B8%8F-showcase)
-  - [Contributions, Issues and Forking](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-contributions-issues-and-forking)
-  - [Creator](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-creator)
-  - [Show Your Support!](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-show-your-support)
-  - [Licensing](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#%EF%B8%8F-licensing)
+  - [The Project Brief](https://github.com/Rhelli/Restaurant-Website/tree/feature/readme#-the-project-brief)
+  - [The Nitty Gritty](https://github.com/Rhelli/Restaurant-Website/tree/feature/readme#-the-nitty-gritty)
+  - [Tools & Technology Used](https://github.com/Rhelli/Restaurant-Website/tree/feature/readme#-tools--technology-used)
+  - [Setup & Use](https://github.com/Rhelli/Restaurant-Website/tree/feature/readme#%EF%B8%8F-setup--use)
+  - [Showcase](https://github.com/Rhelli/Restaurant-Website/tree/feature/readme#-showcase)
+  - [Contributions, Issues and Forking](https://github.com/Rhelli/Restaurant-Website/tree/feature/readme#-contributions-issues-and-forking)
+  - [Creator](https://github.com/Rhelli/Restaurant-Website/tree/feature/readme#%EF%B8%8F-creator)
+  - [Show Your Support!](https://github.com/Rhelli/Restaurant-Website/tree/feature/readme#%EF%B8%8F-show-your-support)
+  - [Licensing](https://github.com/Rhelli/Restaurant-Website/tree/feature/readme#-licensing)
 
 
 ## 💡 The Project Brief
@@ -65,9 +65,9 @@ Without these tools, build time for basic HTML structure would have been far lon
 ### 🛠️ Setup & Use
 
 #### Setup
-For the live site, [head here]()
+For the live site, [head here.](https://the-earl-of-sandwich.netlify.app/)
 
-1. To inspect and tinker with the code on your system, download this repo either [here]() or from the link at the top of the page
+1. To inspect and tinker with the code on your system, download this repo either [here](https://github.com/Rhelli/Restaurant-Website/archive/develop.zip) or from the link at the top of the page
 
 2. Now it's time to ensure you've got Node and NPM installed. If you do, skip this step. Otherwise, head on over to [nodejs's website](https://nodejs.org/en/) to download node with npm.
 
@@ -137,4 +137,4 @@ Rory Hellier - [Github](https://github.com/Rhelli)
 Give a ⭐️ if you like this project!
 
 ## 📑 Licensing
-This project is [MIT](https://github.com/Rhelli/StayInTouch-Social-Media/LICENSE.txt) licensed.
+This project is [MIT](https://github.com/Rhelli/Restaurant-Website/LICENSE.txt) licensed.
