@@ -13,7 +13,9 @@
     "no-shadow": "off",
     "no-param-reassign": "off",
     "eol-last": "off",
-    "arrow-parens": "off"
+    "arrow-parens": "off",
+    "no-plusplus": "off",
+    "func-names": "off"
   },
   "ignorePatterns": [
     "dist/",
