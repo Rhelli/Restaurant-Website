@@ -1,18 +1,17 @@
 import * as generator from './generator';
 
-export default function generateNavbar() {
+const generateNavbar = () => {
   // CREATE NAV CONTAINER
   const navbarContainer = generator.htmlGenerator('div', 'navbar-container', 'navbarContainer');
 
   // CREATE LOGO CONTAINER
   const logoContainerGen = () => {
     const logoContainer = generator.htmlGenerator('div', 'nav-logo-container');
-    const logo = generator.imgGen('img', 'nav-logo', '../src/assets/img/icon.png');
+    const logo = generator.htmlGenerator('div', 'nav-logo');
     const text = generator.spaceParse('The/Earl/Of/Sandwich', '/');
     const logoText = generator.textGen('h4', text);
     logoText.id = 'navHomepageButton';
-    logoContainer.appendChild(logo);
-    logoContainer.appendChild(logoText);
+    logoContainer.append(logo, logoText);
     return logoContainer;
   };
 
@@ -41,4 +40,6 @@ export default function generateNavbar() {
   };
 
   return navbarBuilder();
-}
+};
+
+export default generateNavbar;

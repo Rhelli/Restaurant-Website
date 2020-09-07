@@ -1,6 +1,6 @@
 import * as generator from './generator';
 
-export default function mainPageContainer() {
+const mainPageContainer = () => {
   // ASSEMBLE HOMEPAGE ELEMENTS
   const mainContainer = generator.htmlGenerator('div', 'main-container', 'content');
   const credits = generator.htmlGenerator('div', 'credits');
@@ -8,4 +8,6 @@ export default function mainPageContainer() {
   credits.appendChild(creditsText);
   mainContainer.appendChild(credits);
   return mainContainer;
-}
+};
+
+export default mainPageContainer;

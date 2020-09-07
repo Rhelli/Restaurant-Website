@@ -1,7 +1,7 @@
 import * as generator from './generator';
 import generateMenu from './menu';
 
-export default function generateHomepage() {
+const generateHomepage = () => {
   const landingContainer = generator.htmlGenerator('div', 'landing-container', 'landingContainer');
   landingContainer.classList.add('slide-in-top');
 
@@ -121,4 +121,6 @@ export default function generateHomepage() {
   };
 
   return landingContainerBuilder();
-}
+};
+
+export default generateHomepage;

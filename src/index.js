@@ -26,7 +26,7 @@ const navAboutButton = document.getElementById('navAboutButton');
 const navLinks = [navHomeButton, navMenuButton, navAboutButton];
 
 // DEFINE TAB SWAPPING & ANIMATION BEHAVIOUR
-export default function pageSwapHandle(page) {
+const pageSwapHandle = (page) => {
   const isolatedPageName = page.slice(3).split('').reverse().slice(6)
     .reverse()
     .join('')
@@ -60,7 +60,7 @@ export default function pageSwapHandle(page) {
       }, 400);
     }
   }
-}
+};
 
 // ADD TABS EVENT LISTENERS
 (function () {
@@ -72,3 +72,5 @@ export default function pageSwapHandle(page) {
     });
   }
 }());
+
+export default pageSwapHandle;

@@ -1,7 +1,7 @@
 import * as generator from './generator';
 import generateMenu from './menu';
 
-export default function generateAbout() {
+const generateAbout = () => {
   // CREATE THE ABOUT PAGE CONTAINER
   const aboutContainer = generator.htmlGenerator('div', 'about-container', 'aboutContainer');
   aboutContainer.classList.add('slide-in-top');
@@ -53,4 +53,6 @@ export default function generateAbout() {
   };
 
   return aboutPageBuilder();
-}
+};
+
+export default generateAbout;
